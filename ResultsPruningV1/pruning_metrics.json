@@ -1,0 +1,172 @@
+{
+  "model": "XGBoost single tree (not CART and not a boosted ensemble)",
+  "device": "cuda",
+  "feature_set": "full",
+  "turns": 30,
+  "select_k": 512,
+  "n_train": 10000,
+  "n_dev": 8000,
+  "n_holdout": 2000,
+  "n_encoded_features": 22986,
+  "n_selected_features": 512,
+  "search_mode": "random",
+  "candidates_tested": 18,
+  "folds": 5,
+  "group_cv": false,
+  "random_state": 42,
+  "scoring": "accuracy",
+  "fixed_params": {
+    "reg_lambda": 5.0,
+    "reg_alpha": 0.1,
+    "subsample": 1.0,
+    "colsample_bytree": 1.0
+  },
+  "best_params": {
+    "tree__min_child_weight": 50.0,
+    "tree__max_depth": 6,
+    "tree__gamma": 0.5
+  },
+  "best_cv_score": 0.63825,
+  "best_cv_fold_scores": [
+    0.635,
+    0.629375,
+    0.655625,
+    0.655,
+    0.61625
+  ],
+  "best_cv_train_score": 0.66140625,
+  "dev_fit_accuracy": 0.662625,
+  "holdout": {
+    "accuracy": 0.64,
+    "balanced_accuracy": 0.6399999999999999,
+    "precision": 0.6631701631701632,
+    "recall": 0.569,
+    "f1": 0.61248654467169,
+    "roc_auc": 0.6950210000000001,
+    "confusion_matrix_labels_0_1": [
+      [
+        711,
+        289
+      ],
+      [
+        431,
+        569
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.6225919439579685,
+        "recall": 0.711,
+        "f1-score": 0.6638655462184874,
+        "support": 1000.0
+      },
+      "1": {
+        "precision": 0.6631701631701632,
+        "recall": 0.569,
+        "f1-score": 0.61248654467169,
+        "support": 1000.0
+      },
+      "accuracy": 0.64,
+      "macro avg": {
+        "precision": 0.6428810535640659,
+        "recall": 0.6399999999999999,
+        "f1-score": 0.6381760454450887,
+        "support": 2000.0
+      },
+      "weighted avg": {
+        "precision": 0.6428810535640659,
+        "recall": 0.64,
+        "f1-score": 0.6381760454450887,
+        "support": 2000.0
+      }
+    }
+  },
+  "previous_fixed_config_cv": null,
+  "top_20_importances": [
+    {
+      "feature": "difference_latest_hp_below_50pct",
+      "gain_importance": 0.4530652165412903
+    },
+    {
+      "feature": "difference_latest_hp_mean",
+      "gain_importance": 0.16264693439006805
+    },
+    {
+      "feature": "difference_latest_fainted",
+      "gain_importance": 0.04901115968823433
+    },
+    {
+      "feature": "p1_damage_events_sum",
+      "gain_importance": 0.03461681678891182
+    },
+    {
+      "feature": "difference_latest_hp_min",
+      "gain_importance": 0.03146447241306305
+    },
+    {
+      "feature": "difference_observed_species",
+      "gain_importance": 0.029703248292207718
+    },
+    {
+      "feature": "team_atk_max",
+      "gain_importance": 0.02313251979649067
+    },
+    {
+      "feature": "t27_hp_gap",
+      "gain_importance": 0.022608740255236626
+    },
+    {
+      "feature": "t20_hp_gap",
+      "gain_importance": 0.02164524421095848
+    },
+    {
+      "feature": "t26_p2_hp_pct",
+      "gain_importance": 0.020823530852794647
+    },
+    {
+      "feature": "t09_hp_gap",
+      "gain_importance": 0.020349260419607162
+    },
+    {
+      "feature": "p2_active_hp_std",
+      "gain_importance": 0.018628962337970734
+    },
+    {
+      "feature": "difference_last_active_hp",
+      "gain_importance": 0.01814603991806507
+    },
+    {
+      "feature": "difference_damage_events_sum",
+      "gain_importance": 0.012957794591784477
+    },
+    {
+      "feature": "difference_status_events",
+      "gain_importance": 0.012653738260269165
+    },
+    {
+      "feature": "p1_latest_hp_sum",
+      "gain_importance": 0.011640041135251522
+    },
+    {
+      "feature": "t07_p1_hp_pct",
+      "gain_importance": 0.011437888257205486
+    },
+    {
+      "feature": "p2_last_10_turn_hp_std",
+      "gain_importance": 0.011001798324286938
+    },
+    {
+      "feature": "p2_last_10_turn_hp_mean",
+      "gain_importance": 0.01020180992782116
+    },
+    {
+      "feature": "p2_active_hp_mean",
+      "gain_importance": 0.01006719283759594
+    }
+  ],
+  "holdout_prior_exposure_warning": "The project has already inspected a holdout of this dataset; repeated use for experiment selection biases the final performance estimate.",
+  "cv_selection_warning": "The best CV score is selection-biased; use holdout or nested CV for assessment.",
+  "submission_generated": true,
+  "smoke_test": false,
+  "elapsed_seconds": 1076.5906300999995
+}
