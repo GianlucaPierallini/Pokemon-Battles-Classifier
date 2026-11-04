@@ -1,0 +1,10 @@
+# Competition datasets and predictions: do not commit
+train.jsonl
+test.jsonl
+sample_submission.csv
+type_chart_gen2.csv
+submission*.csv
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.DS_Store
