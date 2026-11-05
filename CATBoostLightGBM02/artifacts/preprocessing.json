@@ -1,0 +1,4951 @@
+{
+  "schema_version": 1,
+  "description": "FDS Gen 2 original CatBoost (65%) + LightGBM (35%) blend",
+  "original_feature_module_sha256": "bcf7b30ff2a39b572ab9749901ecae79456356fd196faf3c51cf8a802e137f8f",
+  "official_type_chart_sha256": "66c8e6f8eaa54f07fdd586663324f5e0fbbaaa8e7f0b7e41d83729c28d837e10",
+  "train_jsonl_sha256": "78f9e91c51b92adebe803bb09221347a55423dce080e433465edf527d2c20d0d",
+  "catboost_model_sha256": "eb0f4cf10cbe1d5ced61c0d61d680e62aad6f6449cf1e1defdc8180dfcfeae14",
+  "lightgbm_model_sha256": "4777934010c32a7e74b6938d08f208c0d5259aa834f24e31c6e4960bd60bf2b4",
+  "feature_columns": [
+    "team_size",
+    "team_hp_mean",
+    "team_hp_min",
+    "team_hp_max",
+    "team_hp_std",
+    "team_atk_mean",
+    "team_atk_min",
+    "team_atk_max",
+    "team_atk_std",
+    "team_def_mean",
+    "team_def_min",
+    "team_def_max",
+    "team_def_std",
+    "team_spa_mean",
+    "team_spa_min",
+    "team_spa_max",
+    "team_spa_std",
+    "team_spd_mean",
+    "team_spd_min",
+    "team_spd_max",
+    "team_spd_std",
+    "team_spe_mean",
+    "team_spe_min",
+    "team_spe_max",
+    "team_spe_std",
+    "team_base_total_mean",
+    "team_base_total_min",
+    "team_base_total_max",
+    "team_base_total_std",
+    "team_top2_atk",
+    "team_top2_spa",
+    "team_top2_def",
+    "team_top2_spd",
+    "team_physical_bias",
+    "team_defensive_bias",
+    "team_fast_count",
+    "team_slow_count",
+    "team_bulk_mean",
+    "team_offense_mean",
+    "team_type_normal",
+    "team_type_electric",
+    "team_type_ground",
+    "team_type_psychic",
+    "team_type_water",
+    "team_type_poison",
+    "team_type_ice",
+    "team_type_threequestionmarks",
+    "team_type_grass",
+    "team_type_rock",
+    "team_type_flying",
+    "team_type_dark",
+    "team_type_fighting",
+    "team_type_fire",
+    "team_type_ghost",
+    "team_type_steel",
+    "team_type_bug",
+    "team_type_dragon",
+    "team_item_leftovers",
+    "team_item_thickclub",
+    "team_item_miracleberry",
+    "team_item_mintberry",
+    "team_item_charcoal",
+    "team_item_goldberry",
+    "team_item_lightball",
+    "team_item_berryjuice",
+    "team_item_berserkgene",
+    "team_item_przcureberry",
+    "team_item_berry",
+    "team_item_scopelens",
+    "team_number_unique_types",
+    "team_number_unique_items",
+    "lead_p2_base_hp",
+    "lead_p2_base_atk",
+    "lead_p2_base_def",
+    "lead_p2_base_spa",
+    "lead_p2_base_spd",
+    "lead_p2_base_spe",
+    "lead_p2_name",
+    "lead_p2_types",
+    "lead_p2_total",
+    "lead_p1_name",
+    "lead_p1_item",
+    "lead_p1_types",
+    "lead_stat_diff_hp",
+    "lead_teammean_diff_hp",
+    "lead_stat_diff_atk",
+    "lead_teammean_diff_atk",
+    "lead_stat_diff_def",
+    "lead_teammean_diff_def",
+    "lead_stat_diff_spa",
+    "lead_teammean_diff_spa",
+    "lead_stat_diff_spd",
+    "lead_teammean_diff_spd",
+    "lead_stat_diff_spe",
+    "lead_teammean_diff_spe",
+    "lead_p1_stab_effectiveness",
+    "lead_p2_stab_effectiveness",
+    "battle_observed_turns",
+    "battle_p2_revealed_count",
+    "battle_p1_revealed_count",
+    "battle_opponent_hidden_count",
+    "battle_novel_p2_after10",
+    "p1_last_name",
+    "p1_last_move",
+    "p1_last_status",
+    "p1_known_fainted",
+    "p1_known_healthy",
+    "p1_known_critical",
+    "p1_known_bad_status",
+    "p1_known_toxic",
+    "p1_known_paralyzed",
+    "p1_known_sleeping",
+    "p1_known_burned",
+    "p1_known_poisoned",
+    "p1_known_boost_positive",
+    "p1_known_boost_negative",
+    "p1_known_effects",
+    "p1_status_distinct",
+    "p1_revealed_hp_mean",
+    "p1_revealed_hp_min",
+    "p1_revealed_hp_max",
+    "p1_revealed_hp_std",
+    "p1_six_hp_est_mean",
+    "p1_six_hp_est_min",
+    "p1_six_hp_est_max",
+    "p1_six_hp_est_std",
+    "p1_remaining_slots_est",
+    "p1_revealed_below_half",
+    "p1_revealed_above_half",
+    "p1_move_unique",
+    "p1_move_count",
+    "p1_move_spam_ratio",
+    "p1_switches",
+    "p1_newly_revealed",
+    "p1_new_status_events",
+    "p1_status_turns",
+    "p1_effect_turns",
+    "p1_hp_lost",
+    "p1_hp_healed",
+    "p1_no_move_turns",
+    "p1_nominal_damage",
+    "p1_stab_moves",
+    "p1_eff_power",
+    "p1_super_effective_moves",
+    "p1_immune_moves",
+    "p1_move_physical",
+    "p1_move_special",
+    "p1_move_status",
+    "p1_move_type_normal",
+    "p1_move_type_electric",
+    "p1_move_type_ground",
+    "p1_move_type_psychic",
+    "p1_move_type_water",
+    "p1_move_type_poison",
+    "p1_move_type_ice",
+    "p1_move_type_threequestionmarks",
+    "p1_move_type_grass",
+    "p1_move_type_rock",
+    "p1_move_type_flying",
+    "p1_move_type_dark",
+    "p1_move_type_fighting",
+    "p1_move_type_fire",
+    "p1_move_type_ghost",
+    "p1_move_type_steel",
+    "p1_move_type_bug",
+    "p1_move_type_dragon",
+    "p1_move_basepower_mean",
+    "p1_move_basepower_min",
+    "p1_move_basepower_max",
+    "p1_move_basepower_std",
+    "p1_move_accuracy_mean",
+    "p1_move_accuracy_min",
+    "p1_move_accuracy_max",
+    "p1_move_accuracy_std",
+    "p1_move_type_effect_mean",
+    "p1_move_type_effect_min",
+    "p1_move_type_effect_max",
+    "p1_move_type_effect_std",
+    "p1_hp_change_mean",
+    "p1_hp_change_min",
+    "p1_hp_change_max",
+    "p1_hp_change_std",
+    "p1_last_boost_atk",
+    "p1_last_boost_def",
+    "p1_last_boost_spa",
+    "p1_last_boost_spd",
+    "p1_last_boost_spe",
+    "p1_species_snorlax",
+    "p1_species_zapdos",
+    "p1_species_cloyster",
+    "p1_species_raikou",
+    "p1_species_tyranitar",
+    "p1_species_skarmory",
+    "p1_species_exeggutor",
+    "p1_species_gengar",
+    "p1_species_steelix",
+    "p1_species_nidoking",
+    "p1_species_forretress",
+    "p1_species_starmie",
+    "p1_species_machamp",
+    "p1_species_umbreon",
+    "p1_species_golem",
+    "p1_species_blissey",
+    "p1_species_jynx",
+    "p1_species_miltank",
+    "p1_species_vaporeon",
+    "p1_species_suicune",
+    "p1_species_marowak",
+    "p1_species_misdreavus",
+    "p1_species_jolteon",
+    "p1_species_heracross",
+    "p1_species_rhydon",
+    "p1_species_dragonite",
+    "p1_species_alakazam",
+    "p1_species_houndoom",
+    "p1_species_smeargle",
+    "p1_species_meganium",
+    "p1_species_charizard",
+    "p1_species_scizor",
+    "p1_species_quagsire",
+    "p1_species_espeon",
+    "p1_species_tentacruel",
+    "p1_species_venusaur",
+    "p1_species_porygon2",
+    "p1_species_kingdra",
+    "p1_species_ampharos",
+    "p1_species_lanturn",
+    "p1_species_typhlosion",
+    "p1_species_moltres",
+    "p1_species_blastoise",
+    "p1_species_piloswine",
+    "p1_species_shuckle",
+    "p1_species_aerodactyl",
+    "p1_species_lapras",
+    "p1_species_donphan",
+    "p1_species_pikachu",
+    "p1_species_kangaskhan",
+    "p1_species_qwilfish",
+    "p1_species_nidoqueen",
+    "p1_species_clefable",
+    "p1_species_jumpluff",
+    "p1_species_electabuzz",
+    "p1_used_thunder",
+    "p1_count_thunder",
+    "p1_used_earthquake",
+    "p1_count_earthquake",
+    "p1_used_rest",
+    "p1_count_rest",
+    "p1_used_hiddenpower",
+    "p1_count_hiddenpower",
+    "p1_used_curse",
+    "p1_count_curse",
+    "p1_used_spikes",
+    "p1_count_spikes",
+    "p1_used_doubleedge",
+    "p1_count_doubleedge",
+    "p1_used_sleeptalk",
+    "p1_count_sleeptalk",
+    "p1_used_surf",
+    "p1_count_surf",
+    "p1_used_toxic",
+    "p1_count_toxic",
+    "p1_used_thunderbolt",
+    "p1_count_thunderbolt",
+    "p1_used_bodyslam",
+    "p1_count_bodyslam",
+    "p1_used_roar",
+    "p1_count_roar",
+    "p1_used_psychic",
+    "p1_count_psychic",
+    "p1_used_rockslide",
+    "p1_count_rockslide",
+    "p1_used_icebeam",
+    "p1_count_icebeam",
+    "p1_used_lovelykiss",
+    "p1_count_lovelykiss",
+    "p1_used_rapidspin",
+    "p1_count_rapidspin",
+    "p1_used_fireblast",
+    "p1_count_fireblast",
+    "p1_used_whirlwind",
+    "p1_count_whirlwind",
+    "p1_used_thunderwave",
+    "p1_count_thunderwave",
+    "p1_used_explosion",
+    "p1_count_explosion",
+    "p1_used_drillpeck",
+    "p1_count_drillpeck",
+    "p1_used_thief",
+    "p1_count_thief",
+    "p1_used_crosschop",
+    "p1_count_crosschop",
+    "p1_used_icepunch",
+    "p1_count_icepunch",
+    "p1_used_dynamicpunch",
+    "p1_count_dynamicpunch",
+    "p1_used_reflect",
+    "p1_count_reflect",
+    "p1_used_pursuit",
+    "p1_count_pursuit",
+    "p1_used_sleeppowder",
+    "p1_count_sleeppowder",
+    "p1_used_gigadrain",
+    "p1_count_gigadrain",
+    "p1_used_flamethrower",
+    "p1_count_flamethrower",
+    "p1_used_batonpass",
+    "p1_count_batonpass",
+    "p1_used_protect",
+    "p1_count_protect",
+    "p1_used_substitute",
+    "p1_count_substitute",
+    "p1_last_base_hp",
+    "p1_last_base_atk",
+    "p1_last_base_def",
+    "p1_last_base_spa",
+    "p1_last_base_spd",
+    "p1_last_base_spe",
+    "p1_last_types",
+    "p1_revealed_healthy_base_atk",
+    "p1_revealed_healthy_base_spa",
+    "p1_revealed_healthy_base_def",
+    "p1_revealed_healthy_base_spd",
+    "p1_revealed_healthy_base_spe",
+    "p2_last_name",
+    "p2_last_move",
+    "p2_last_status",
+    "p2_known_fainted",
+    "p2_known_healthy",
+    "p2_known_critical",
+    "p2_known_bad_status",
+    "p2_known_toxic",
+    "p2_known_paralyzed",
+    "p2_known_sleeping",
+    "p2_known_burned",
+    "p2_known_poisoned",
+    "p2_known_boost_positive",
+    "p2_known_boost_negative",
+    "p2_known_effects",
+    "p2_status_distinct",
+    "p2_revealed_hp_mean",
+    "p2_revealed_hp_min",
+    "p2_revealed_hp_max",
+    "p2_revealed_hp_std",
+    "p2_six_hp_est_mean",
+    "p2_six_hp_est_min",
+    "p2_six_hp_est_max",
+    "p2_six_hp_est_std",
+    "p2_remaining_slots_est",
+    "p2_revealed_below_half",
+    "p2_revealed_above_half",
+    "p2_move_unique",
+    "p2_move_count",
+    "p2_move_spam_ratio",
+    "p2_switches",
+    "p2_newly_revealed",
+    "p2_new_status_events",
+    "p2_status_turns",
+    "p2_effect_turns",
+    "p2_hp_lost",
+    "p2_hp_healed",
+    "p2_no_move_turns",
+    "p2_nominal_damage",
+    "p2_stab_moves",
+    "p2_eff_power",
+    "p2_super_effective_moves",
+    "p2_immune_moves",
+    "p2_move_physical",
+    "p2_move_special",
+    "p2_move_status",
+    "p2_move_type_normal",
+    "p2_move_type_electric",
+    "p2_move_type_ground",
+    "p2_move_type_psychic",
+    "p2_move_type_water",
+    "p2_move_type_poison",
+    "p2_move_type_ice",
+    "p2_move_type_threequestionmarks",
+    "p2_move_type_grass",
+    "p2_move_type_rock",
+    "p2_move_type_flying",
+    "p2_move_type_dark",
+    "p2_move_type_fighting",
+    "p2_move_type_fire",
+    "p2_move_type_ghost",
+    "p2_move_type_steel",
+    "p2_move_type_bug",
+    "p2_move_type_dragon",
+    "p2_move_basepower_mean",
+    "p2_move_basepower_min",
+    "p2_move_basepower_max",
+    "p2_move_basepower_std",
+    "p2_move_accuracy_mean",
+    "p2_move_accuracy_min",
+    "p2_move_accuracy_max",
+    "p2_move_accuracy_std",
+    "p2_move_type_effect_mean",
+    "p2_move_type_effect_min",
+    "p2_move_type_effect_max",
+    "p2_move_type_effect_std",
+    "p2_hp_change_mean",
+    "p2_hp_change_min",
+    "p2_hp_change_max",
+    "p2_hp_change_std",
+    "p2_last_boost_atk",
+    "p2_last_boost_def",
+    "p2_last_boost_spa",
+    "p2_last_boost_spd",
+    "p2_last_boost_spe",
+    "p2_species_snorlax",
+    "p2_species_zapdos",
+    "p2_species_cloyster",
+    "p2_species_raikou",
+    "p2_species_tyranitar",
+    "p2_species_skarmory",
+    "p2_species_exeggutor",
+    "p2_species_gengar",
+    "p2_species_steelix",
+    "p2_species_nidoking",
+    "p2_species_forretress",
+    "p2_species_starmie",
+    "p2_species_machamp",
+    "p2_species_umbreon",
+    "p2_species_golem",
+    "p2_species_blissey",
+    "p2_species_jynx",
+    "p2_species_miltank",
+    "p2_species_vaporeon",
+    "p2_species_suicune",
+    "p2_species_marowak",
+    "p2_species_misdreavus",
+    "p2_species_jolteon",
+    "p2_species_heracross",
+    "p2_species_rhydon",
+    "p2_species_dragonite",
+    "p2_species_alakazam",
+    "p2_species_houndoom",
+    "p2_species_smeargle",
+    "p2_species_meganium",
+    "p2_species_charizard",
+    "p2_species_scizor",
+    "p2_species_quagsire",
+    "p2_species_espeon",
+    "p2_species_tentacruel",
+    "p2_species_venusaur",
+    "p2_species_porygon2",
+    "p2_species_kingdra",
+    "p2_species_ampharos",
+    "p2_species_lanturn",
+    "p2_species_typhlosion",
+    "p2_species_moltres",
+    "p2_species_blastoise",
+    "p2_species_piloswine",
+    "p2_species_shuckle",
+    "p2_species_aerodactyl",
+    "p2_species_lapras",
+    "p2_species_donphan",
+    "p2_species_pikachu",
+    "p2_species_kangaskhan",
+    "p2_species_qwilfish",
+    "p2_species_nidoqueen",
+    "p2_species_clefable",
+    "p2_species_jumpluff",
+    "p2_species_electabuzz",
+    "p2_used_thunder",
+    "p2_count_thunder",
+    "p2_used_earthquake",
+    "p2_count_earthquake",
+    "p2_used_rest",
+    "p2_count_rest",
+    "p2_used_hiddenpower",
+    "p2_count_hiddenpower",
+    "p2_used_curse",
+    "p2_count_curse",
+    "p2_used_spikes",
+    "p2_count_spikes",
+    "p2_used_doubleedge",
+    "p2_count_doubleedge",
+    "p2_used_sleeptalk",
+    "p2_count_sleeptalk",
+    "p2_used_surf",
+    "p2_count_surf",
+    "p2_used_toxic",
+    "p2_count_toxic",
+    "p2_used_thunderbolt",
+    "p2_count_thunderbolt",
+    "p2_used_bodyslam",
+    "p2_count_bodyslam",
+    "p2_used_roar",
+    "p2_count_roar",
+    "p2_used_psychic",
+    "p2_count_psychic",
+    "p2_used_rockslide",
+    "p2_count_rockslide",
+    "p2_used_icebeam",
+    "p2_count_icebeam",
+    "p2_used_lovelykiss",
+    "p2_count_lovelykiss",
+    "p2_used_rapidspin",
+    "p2_count_rapidspin",
+    "p2_used_fireblast",
+    "p2_count_fireblast",
+    "p2_used_whirlwind",
+    "p2_count_whirlwind",
+    "p2_used_thunderwave",
+    "p2_count_thunderwave",
+    "p2_used_explosion",
+    "p2_count_explosion",
+    "p2_used_drillpeck",
+    "p2_count_drillpeck",
+    "p2_used_thief",
+    "p2_count_thief",
+    "p2_used_crosschop",
+    "p2_count_crosschop",
+    "p2_used_icepunch",
+    "p2_count_icepunch",
+    "p2_used_dynamicpunch",
+    "p2_count_dynamicpunch",
+    "p2_used_reflect",
+    "p2_count_reflect",
+    "p2_used_pursuit",
+    "p2_count_pursuit",
+    "p2_used_sleeppowder",
+    "p2_count_sleeppowder",
+    "p2_used_gigadrain",
+    "p2_count_gigadrain",
+    "p2_used_flamethrower",
+    "p2_count_flamethrower",
+    "p2_used_batonpass",
+    "p2_count_batonpass",
+    "p2_used_protect",
+    "p2_count_protect",
+    "p2_used_substitute",
+    "p2_count_substitute",
+    "p2_last_base_hp",
+    "p2_last_base_atk",
+    "p2_last_base_def",
+    "p2_last_base_spa",
+    "p2_last_base_spd",
+    "p2_last_base_spe",
+    "p2_last_types",
+    "p2_revealed_healthy_base_atk",
+    "p2_revealed_healthy_base_spa",
+    "p2_revealed_healthy_base_def",
+    "p2_revealed_healthy_base_spd",
+    "p2_revealed_healthy_base_spe",
+    "adv_known_fainted",
+    "adv_known_critical",
+    "adv_known_bad_status",
+    "adv_known_boost_positive",
+    "adv_known_boost_negative",
+    "adv_move_count",
+    "adv_switches",
+    "adv_hp_lost",
+    "adv_hp_healed",
+    "adv_move_physical",
+    "adv_move_special",
+    "adv_move_status",
+    "adv_nominal_damage",
+    "adv_revealed_hp_mean",
+    "adv_six_hp_est_mean",
+    "adv_move_unique",
+    "adv_status_turns",
+    "adv_remaining_slots_est",
+    "adv_damage_dealt_proxy",
+    "adv_healing",
+    "adv_healthy_remaining",
+    "adv_last_speed",
+    "adv_last_physical_attack_vs_defense",
+    "adv_last_special_attack_vs_defense",
+    "adv_last_stab_effectiveness",
+    "adv_last_stab_effectiveness_opponent",
+    "window_early_p1_hp_mean",
+    "window_early_p1_hp_last",
+    "window_early_p2_hp_mean",
+    "window_early_p2_hp_last",
+    "window_early_active_hp_advantage_mean",
+    "window_early_active_hp_advantage_last",
+    "window_early_p1_team_hp_est_mean",
+    "window_early_p1_team_hp_est_last",
+    "window_early_p2_team_hp_est_mean",
+    "window_early_p2_team_hp_est_last",
+    "window_early_team_hp_advantage_mean",
+    "window_early_team_hp_advantage_last",
+    "window_early_fainted_advantage_mean",
+    "window_early_fainted_advantage_last",
+    "window_early_p1_status_mean",
+    "window_early_p1_status_last",
+    "window_early_p2_status_mean",
+    "window_early_p2_status_last",
+    "window_early_p1_boost_total_mean",
+    "window_early_p1_boost_total_last",
+    "window_early_p2_boost_total_mean",
+    "window_early_p2_boost_total_last",
+    "window_early_p2_revealed_count_mean",
+    "window_early_p2_revealed_count_last",
+    "window_middle_p1_hp_mean",
+    "window_middle_p1_hp_last",
+    "window_middle_p2_hp_mean",
+    "window_middle_p2_hp_last",
+    "window_middle_active_hp_advantage_mean",
+    "window_middle_active_hp_advantage_last",
+    "window_middle_p1_team_hp_est_mean",
+    "window_middle_p1_team_hp_est_last",
+    "window_middle_p2_team_hp_est_mean",
+    "window_middle_p2_team_hp_est_last",
+    "window_middle_team_hp_advantage_mean",
+    "window_middle_team_hp_advantage_last",
+    "window_middle_fainted_advantage_mean",
+    "window_middle_fainted_advantage_last",
+    "window_middle_p1_status_mean",
+    "window_middle_p1_status_last",
+    "window_middle_p2_status_mean",
+    "window_middle_p2_status_last",
+    "window_middle_p1_boost_total_mean",
+    "window_middle_p1_boost_total_last",
+    "window_middle_p2_boost_total_mean",
+    "window_middle_p2_boost_total_last",
+    "window_middle_p2_revealed_count_mean",
+    "window_middle_p2_revealed_count_last",
+    "window_late_p1_hp_mean",
+    "window_late_p1_hp_last",
+    "window_late_p2_hp_mean",
+    "window_late_p2_hp_last",
+    "window_late_active_hp_advantage_mean",
+    "window_late_active_hp_advantage_last",
+    "window_late_p1_team_hp_est_mean",
+    "window_late_p1_team_hp_est_last",
+    "window_late_p2_team_hp_est_mean",
+    "window_late_p2_team_hp_est_last",
+    "window_late_team_hp_advantage_mean",
+    "window_late_team_hp_advantage_last",
+    "window_late_fainted_advantage_mean",
+    "window_late_fainted_advantage_last",
+    "window_late_p1_status_mean",
+    "window_late_p1_status_last",
+    "window_late_p2_status_mean",
+    "window_late_p2_status_last",
+    "window_late_p1_boost_total_mean",
+    "window_late_p1_boost_total_last",
+    "window_late_p2_boost_total_mean",
+    "window_late_p2_boost_total_last",
+    "window_late_p2_revealed_count_mean",
+    "window_late_p2_revealed_count_last",
+    "window_last5_p1_hp_mean",
+    "window_last5_p1_hp_last",
+    "window_last5_p2_hp_mean",
+    "window_last5_p2_hp_last",
+    "window_last5_active_hp_advantage_mean",
+    "window_last5_active_hp_advantage_last",
+    "window_last5_p1_team_hp_est_mean",
+    "window_last5_p1_team_hp_est_last",
+    "window_last5_p2_team_hp_est_mean",
+    "window_last5_p2_team_hp_est_last",
+    "window_last5_team_hp_advantage_mean",
+    "window_last5_team_hp_advantage_last",
+    "window_last5_fainted_advantage_mean",
+    "window_last5_fainted_advantage_last",
+    "window_last5_p1_status_mean",
+    "window_last5_p1_status_last",
+    "window_last5_p2_status_mean",
+    "window_last5_p2_status_last",
+    "window_last5_p1_boost_total_mean",
+    "window_last5_p1_boost_total_last",
+    "window_last5_p2_boost_total_mean",
+    "window_last5_p2_boost_total_last",
+    "window_last5_p2_revealed_count_mean",
+    "window_last5_p2_revealed_count_last",
+    "trend_p1_hp_slope",
+    "trend_p1_hp_change",
+    "trend_p1_hp_late_minus_early",
+    "trend_p2_hp_slope",
+    "trend_p2_hp_change",
+    "trend_p2_hp_late_minus_early",
+    "trend_active_hp_advantage_slope",
+    "trend_active_hp_advantage_change",
+    "trend_active_hp_advantage_late_minus_early",
+    "trend_p1_team_hp_est_slope",
+    "trend_p1_team_hp_est_change",
+    "trend_p1_team_hp_est_late_minus_early",
+    "trend_p2_team_hp_est_slope",
+    "trend_p2_team_hp_est_change",
+    "trend_p2_team_hp_est_late_minus_early",
+    "trend_team_hp_advantage_slope",
+    "trend_team_hp_advantage_change",
+    "trend_team_hp_advantage_late_minus_early",
+    "trend_fainted_advantage_slope",
+    "trend_fainted_advantage_change",
+    "trend_fainted_advantage_late_minus_early",
+    "trend_p1_status_slope",
+    "trend_p1_status_change",
+    "trend_p1_status_late_minus_early",
+    "trend_p2_status_slope",
+    "trend_p2_status_change",
+    "trend_p2_status_late_minus_early",
+    "trend_p1_boost_total_slope",
+    "trend_p1_boost_total_change",
+    "trend_p1_boost_total_late_minus_early",
+    "trend_p2_boost_total_slope",
+    "trend_p2_boost_total_change",
+    "trend_p2_boost_total_late_minus_early",
+    "trend_p2_revealed_count_slope",
+    "trend_p2_revealed_count_change",
+    "trend_p2_revealed_count_late_minus_early",
+    "trend_team_hp_gap_final",
+    "trend_active_hp_gap_final",
+    "trend_fainted_gap_final",
+    "trend_p2_revealed_last",
+    "type_team_vs_p2_revealed_mean",
+    "type_team_vs_p2_revealed_max",
+    "type_team_vs_p2_revealed_weak_count",
+    "type_p2_revealed_vs_team_mean",
+    "type_p2_revealed_vs_team_max",
+    "type_p2_revealed_vs_team_weak_count"
+  ],
+  "categorical_columns": [
+    "lead_p2_name",
+    "lead_p2_types",
+    "lead_p1_name",
+    "lead_p1_item",
+    "lead_p1_types",
+    "p1_last_name",
+    "p1_last_move",
+    "p1_last_status",
+    "p1_last_types",
+    "p2_last_name",
+    "p2_last_move",
+    "p2_last_status",
+    "p2_last_types"
+  ],
+  "lightgbm_categories": {
+    "lead_p2_name": [
+      "forretress",
+      "raikou",
+      "exeggutor",
+      "cloyster",
+      "zapdos",
+      "jynx",
+      "snorlax",
+      "umbreon",
+      "nidoking",
+      "dragonite",
+      "fearow",
+      "gengar",
+      "houndoom",
+      "magneton",
+      "ampharos",
+      "typhlosion",
+      "kingdra",
+      "tyranitar",
+      "qwilfish",
+      "smeargle",
+      "porygon2",
+      "misdreavus",
+      "jolteon",
+      "machamp",
+      "mrmime",
+      "articuno",
+      "scizor",
+      "suicune",
+      "vaporeon",
+      "alakazam",
+      "jumpluff",
+      "skarmory",
+      "scyther",
+      "blissey",
+      "aipom",
+      "kadabra",
+      "hitmonlee",
+      "feraligatr",
+      "nidoqueen",
+      "vileplume",
+      "ditto",
+      "blastoise",
+      "lanturn",
+      "starmie",
+      "tauros",
+      "electrode",
+      "exeggcute",
+      "heracross",
+      "clefable",
+      "charizard",
+      "rapidash",
+      "sudowoodo",
+      "venonat",
+      "pikachu",
+      "gyarados",
+      "steelix",
+      "lapras",
+      "onix",
+      "raichu",
+      "entei",
+      "magmar",
+      "espeon",
+      "crobat",
+      "aerodactyl",
+      "muk",
+      "ledian",
+      "primeape",
+      "rhydon",
+      "tentacruel",
+      "electabuzz",
+      "murkrow",
+      "houndour",
+      "cubone",
+      "delibird",
+      "moltres",
+      "flaaffy",
+      "venomoth",
+      "quilava",
+      "ursaring",
+      "dratini",
+      "butterfree",
+      "kangaskhan",
+      "gloom",
+      "miltank",
+      "parasect",
+      "poliwrath",
+      "meganium",
+      "venusaur",
+      "hypno",
+      "elekid",
+      "dragonair",
+      "wobbuffet",
+      "girafarig",
+      "togetic",
+      "pineco",
+      "omastar",
+      "piloswine",
+      "marowak",
+      "arcanine",
+      "sentret",
+      "chikorita",
+      "dunsparce",
+      "golem",
+      "shuckle",
+      "flareon",
+      "pidgeot",
+      "poliwag",
+      "slowbro",
+      "graveler",
+      "porygon",
+      "chansey",
+      "arbok",
+      "pinsir",
+      "slowking",
+      "granbull",
+      "politoed",
+      "nidorino",
+      "teddiursa",
+      "wigglytuff",
+      "voltorb",
+      "haunter",
+      "gastly",
+      "tangela",
+      "xatu",
+      "raticate",
+      "staryu",
+      "skiploom",
+      "donphan",
+      "togepi",
+      "ivysaur",
+      "mareep",
+      "weepinbell",
+      "gligar",
+      "persian",
+      "beedrill",
+      "victreebel",
+      "hitmontop",
+      "quagsire",
+      "bellossom",
+      "ninetales",
+      "charmander",
+      "farfetchd",
+      "hoppip",
+      "hitmonchan",
+      "furret",
+      "golbat",
+      "swinub",
+      "stantler",
+      "clefairy",
+      "abra",
+      "rattata",
+      "sneasel",
+      "meowth",
+      "golduck",
+      "octillery",
+      "omanyte",
+      "paras",
+      "lickitung",
+      "nidoranm",
+      "noctowl",
+      "dugtrio"
+    ],
+    "lead_p2_types": [
+      "bug_steel",
+      "electric",
+      "grass_psychic",
+      "ice_water",
+      "electric_flying",
+      "ice_psychic",
+      "normal",
+      "dark",
+      "ground_poison",
+      "dragon_flying",
+      "flying_normal",
+      "ghost_poison",
+      "dark_fire",
+      "electric_steel",
+      "fire",
+      "dragon_water",
+      "dark_rock",
+      "poison_water",
+      "ghost",
+      "fighting",
+      "psychic",
+      "flying_ice",
+      "water",
+      "flying_grass",
+      "flying_steel",
+      "bug_flying",
+      "grass_poison",
+      "electric_water",
+      "psychic_water",
+      "bug_fighting",
+      "fire_flying",
+      "rock",
+      "bug_poison",
+      "flying_water",
+      "ground_steel",
+      "ground_rock",
+      "flying_poison",
+      "flying_rock",
+      "poison",
+      "dark_flying",
+      "ground",
+      "dragon",
+      "bug_grass",
+      "fighting_water",
+      "grass",
+      "normal_psychic",
+      "bug",
+      "rock_water",
+      "ground_ice",
+      "bug_rock",
+      "flying_psychic",
+      "flying_ground",
+      "ground_water",
+      "dark_ice"
+    ],
+    "lead_p1_name": [
+      "tyranitar",
+      "raikou",
+      "heracross",
+      "zapdos",
+      "nidoking",
+      "exeggutor",
+      "blissey",
+      "forretress",
+      "smeargle",
+      "snorlax",
+      "marowak",
+      "graveler",
+      "skarmory",
+      "suicune",
+      "jynx",
+      "tauros",
+      "umbreon",
+      "golem",
+      "kingdra",
+      "dragonite",
+      "cloyster",
+      "scizor",
+      "jolteon",
+      "gengar",
+      "mrmime",
+      "steelix",
+      "murkrow",
+      "starmie",
+      "electrode",
+      "typhlosion",
+      "miltank",
+      "houndoom",
+      "lanturn",
+      "nidoqueen",
+      "electabuzz",
+      "alakazam",
+      "quilava",
+      "machamp",
+      "venusaur",
+      "staryu",
+      "misdreavus",
+      "piloswine",
+      "meganium",
+      "ampharos",
+      "kadabra",
+      "qwilfish",
+      "tentacruel",
+      "jumpluff",
+      "arbok",
+      "porygon2",
+      "ursaring",
+      "shuckle",
+      "hypno",
+      "elekid",
+      "feraligatr",
+      "girafarig",
+      "clefable",
+      "gligar",
+      "rapidash",
+      "octillery",
+      "pikachu",
+      "hoppip",
+      "crobat",
+      "kangaskhan",
+      "donphan",
+      "vaporeon",
+      "koffing",
+      "meowth",
+      "rhydon",
+      "raichu",
+      "blastoise",
+      "delibird",
+      "slowbro",
+      "charizard",
+      "hitmonlee",
+      "arcanine",
+      "bellossom",
+      "lapras",
+      "quagsire",
+      "dugtrio",
+      "weezing",
+      "articuno",
+      "ninetales",
+      "aerodactyl",
+      "pineco",
+      "slowpoke",
+      "espeon",
+      "scyther",
+      "magneton",
+      "xatu",
+      "aipom",
+      "venomoth",
+      "golbat",
+      "victreebel",
+      "persian",
+      "moltres",
+      "cubone",
+      "dragonair",
+      "vileplume",
+      "yanma",
+      "gyarados",
+      "lickitung",
+      "seadra",
+      "fearow",
+      "porygon",
+      "ditto",
+      "dodrio",
+      "politoed",
+      "pichu",
+      "tangela",
+      "charmeleon",
+      "gastly",
+      "dunsparce",
+      "houndour",
+      "primeape",
+      "sudowoodo",
+      "dratini",
+      "wigglytuff",
+      "exeggcute",
+      "geodude",
+      "voltorb",
+      "granbull",
+      "ivysaur",
+      "omastar",
+      "abra",
+      "ledian",
+      "onix",
+      "doduo",
+      "larvitar",
+      "furret",
+      "sneasel",
+      "sandslash",
+      "nidorino",
+      "hitmonchan",
+      "muk",
+      "slowking",
+      "poliwag",
+      "farfetchd",
+      "kabutops",
+      "chansey",
+      "haunter",
+      "weepinbell",
+      "beedrill",
+      "hitmontop",
+      "flaaffy",
+      "pinsir",
+      "wobbuffet",
+      "krabby",
+      "sunkern",
+      "gloom",
+      "hoothoot",
+      "magcargo",
+      "flareon",
+      "noctowl",
+      "pidgeot",
+      "teddiursa",
+      "raticate",
+      "magmar",
+      "clefairy",
+      "ponyta",
+      "butterfree",
+      "poliwrath",
+      "seaking",
+      "entei",
+      "caterpie",
+      "poliwhirl",
+      "nidoranm",
+      "bayleef",
+      "rhyhorn",
+      "parasect",
+      "igglybuff",
+      "mantine",
+      "venonat",
+      "paras",
+      "tyrogue",
+      "bellsprout",
+      "hooh"
+    ],
+    "lead_p1_item": [
+      "leftovers",
+      "thickclub",
+      "mintberry",
+      "goldberry",
+      "miracleberry",
+      "berryjuice",
+      "kingsrock",
+      "przcureberry",
+      "lightball",
+      "poisonbarb",
+      "magnet",
+      "noitem",
+      "berserkgene",
+      "berry",
+      "sitrusberry",
+      "charcoal",
+      "brightpowder",
+      "oranberry",
+      "dragonscale",
+      "scopelens",
+      "bitterberry",
+      "pinkbow",
+      "blackbelt",
+      "stick",
+      "lumberry",
+      "quickclaw",
+      "sharpbeak",
+      "polkadotbow",
+      "luckypunch",
+      "psncureberry",
+      "focusband",
+      "spelltag"
+    ],
+    "lead_p1_types": [
+      "dark_rock",
+      "electric",
+      "bug_fighting",
+      "electric_flying",
+      "ground_poison",
+      "grass_psychic",
+      "normal",
+      "bug_steel",
+      "ground",
+      "ground_rock",
+      "flying_steel",
+      "water",
+      "ice_psychic",
+      "dark",
+      "dragon_water",
+      "dragon_flying",
+      "ice_water",
+      "ghost_poison",
+      "psychic",
+      "ground_steel",
+      "dark_flying",
+      "psychic_water",
+      "fire",
+      "dark_fire",
+      "electric_water",
+      "fighting",
+      "grass_poison",
+      "ghost",
+      "ground_ice",
+      "grass",
+      "poison_water",
+      "flying_grass",
+      "poison",
+      "bug_rock",
+      "normal_psychic",
+      "flying_ground",
+      "flying_poison",
+      "flying_ice",
+      "fire_flying",
+      "ground_water",
+      "flying_rock",
+      "bug",
+      "bug_flying",
+      "electric_steel",
+      "flying_psychic",
+      "bug_poison",
+      "dragon",
+      "flying_water",
+      "flying_normal",
+      "rock",
+      "rock_water",
+      "dark_ice",
+      "fire_rock",
+      "fighting_water",
+      "bug_grass"
+    ],
+    "p1_last_name": [
+      "typhlosion",
+      "forretress",
+      "machamp",
+      "cloyster",
+      "exeggutor",
+      "rhydon",
+      "blissey",
+      "steelix",
+      "piloswine",
+      "umbreon",
+      "golem",
+      "starmie",
+      "zapdos",
+      "snorlax",
+      "vaporeon",
+      "tyranitar",
+      "gengar",
+      "mrmime",
+      "heracross",
+      "miltank",
+      "misdreavus",
+      "dragonite",
+      "nidoking",
+      "marowak",
+      "raikou",
+      "venomoth",
+      "tentacruel",
+      "skarmory",
+      "porygon2",
+      "muk",
+      "tauros",
+      "quagsire",
+      "suicune",
+      "venusaur",
+      "jolteon",
+      "meganium",
+      "kingdra",
+      "girafarig",
+      "ampharos",
+      "flareon",
+      "quilava",
+      "vulpix",
+      "sandslash",
+      "charizard",
+      "houndoom",
+      "jynx",
+      "alakazam",
+      "crobat",
+      "kadabra",
+      "victreebel",
+      "qwilfish",
+      "aerodactyl",
+      "dodrio",
+      "ursaring",
+      "pikachu",
+      "espeon",
+      "kangaskhan",
+      "jumpluff",
+      "slowking",
+      "machop",
+      "octillery",
+      "blastoise",
+      "bellossom",
+      "clefable",
+      "smeargle",
+      "gligar",
+      "gyarados",
+      "stantler",
+      "scizor",
+      "hoppip",
+      "primeape",
+      "moltres",
+      "vileplume",
+      "shuckle",
+      "sunkern",
+      "diglett",
+      "rapidash",
+      "hypno",
+      "feraligatr",
+      "hitmontop",
+      "hitmonlee",
+      "donphan",
+      "electrode",
+      "politoed",
+      "electabuzz",
+      "lapras",
+      "raichu",
+      "entei",
+      "teddiursa",
+      "pidgeot",
+      "dugtrio",
+      "flaaffy",
+      "golduck",
+      "furret",
+      "magneton",
+      "lanturn",
+      "scyther",
+      "togetic",
+      "totodile",
+      "poliwrath",
+      "articuno",
+      "sneasel",
+      "chansey",
+      "haunter",
+      "machoke",
+      "dragonair",
+      "beedrill",
+      "nidoqueen",
+      "hitmonchan",
+      "seadra",
+      "wigglytuff",
+      "kingler",
+      "bulbasaur",
+      "omastar",
+      "noctowl",
+      "zubat",
+      "porygon",
+      "parasect",
+      "ivysaur",
+      "kabutops",
+      "pichu",
+      "chikorita",
+      "lickitung",
+      "weezing",
+      "arcanine",
+      "meowth",
+      "ariados",
+      "slowbro",
+      "houndour",
+      "geodude",
+      "xatu",
+      "oddish",
+      "sudowoodo",
+      "dunsparce",
+      "staryu",
+      "gloom",
+      "croconaw",
+      "granbull",
+      "spinarak",
+      "elekid",
+      "nidoranf",
+      "pineco",
+      "nidorino",
+      "cubone",
+      "murkrow",
+      "graveler",
+      "wobbuffet",
+      "farfetchd",
+      "dewgong",
+      "togepi",
+      "bayleef",
+      "poliwhirl",
+      "voltorb",
+      "abra",
+      "drowzee",
+      "persian",
+      "pinsir",
+      "smoochum",
+      "ninetales",
+      "raticate",
+      "nidoranm",
+      "sandshrew",
+      "delibird",
+      "magmar",
+      "chinchou",
+      "ditto",
+      "magcargo",
+      "psyduck",
+      "aipom",
+      "golbat",
+      "rhyhorn",
+      "bellsprout",
+      "rattata"
+    ],
+    "p1_last_move": [
+      "rest",
+      "rapidspin",
+      "toxic",
+      "explosion",
+      "roar",
+      "healbell",
+      "earthquake",
+      "gigadrain",
+      "sleeptalk",
+      "bite",
+      "surf",
+      "thunder",
+      "hiddenpower",
+      "growth",
+      "pursuit",
+      "thunderwave",
+      "megahorn",
+      "bodyslam",
+      "reflect",
+      "curse",
+      "thunderbolt",
+      "icepunch",
+      "doubleedge",
+      "dynamicpunch",
+      "lovelykiss",
+      "crosschop",
+      "rockslide",
+      "crunch",
+      "spikes",
+      "flamethrower",
+      "psychic",
+      "charm",
+      "sludgebomb",
+      "recover",
+      "meanlook",
+      "whirlwind",
+      "protect",
+      "destinybond",
+      "icebeam",
+      "thief",
+      "growl",
+      "agility",
+      "fireblast",
+      "confuseray",
+      "leechseed",
+      "nightmare",
+      "bellydrum",
+      "moonlight",
+      "stunspore",
+      "synthesis",
+      "hydropump",
+      "wingattack",
+      "blizzard",
+      "razorleaf",
+      "drillpeck",
+      "haze",
+      "selfdestruct",
+      "seismictoss",
+      "encore",
+      "frustration",
+      "lightscreen",
+      "milkdrink",
+      "defensecurl",
+      "mudslap",
+      "return",
+      "swordsdance",
+      "sleeppowder",
+      "substitute",
+      "spore",
+      "extremespeed",
+      "acidarmor",
+      "metronome",
+      "zapcannon",
+      "batonpass",
+      "thunderpunch",
+      "softboiled",
+      "meditate",
+      "hypnosis",
+      "triattack",
+      "irontail",
+      "shadowball",
+      "rollout",
+      "sandattack",
+      "thundershock",
+      "swagger",
+      "headbutt",
+      "aurorabeam",
+      "reversal",
+      "doublekick",
+      "screech",
+      "amnesia",
+      "present",
+      "dreameater",
+      "sunnyday",
+      "hyperbeam",
+      "dragonbreath",
+      "slash",
+      "ancientpower",
+      "pinmissile",
+      "clamp",
+      "painsplit",
+      "solarbeam",
+      "sandstorm",
+      "ember",
+      "perishsong",
+      "rage",
+      "bubblebeam",
+      "sweetkiss",
+      "sacredfire",
+      "steelwing",
+      "icywind",
+      "flash",
+      "quickattack",
+      "confusion",
+      "rockthrow",
+      "peck",
+      "counter",
+      "outrage",
+      "attract",
+      "morningsun",
+      "firepunch",
+      "megakick",
+      "nightshade",
+      "wrap",
+      "highjumpkick",
+      "endure",
+      "safeguard",
+      "fly",
+      "submission",
+      "lick",
+      "spark",
+      "scratch",
+      "glare",
+      "futuresight",
+      "feintattack",
+      "petaldance",
+      "detect",
+      "bonemerang",
+      "whirlpool",
+      "spiderweb",
+      "smokescreen",
+      "mirrorcoat",
+      "sing",
+      "triplekick",
+      "superfang",
+      "rollingkick",
+      "psychup",
+      "machpunch",
+      "transform",
+      "dig",
+      "swift",
+      "barrier",
+      "hyperfang",
+      "skyattack",
+      "spite"
+    ],
+    "p1_last_status": [
+      "slp",
+      "fnt",
+      "nostatus",
+      "par",
+      "tox",
+      "brn",
+      "psn",
+      "frz"
+    ],
+    "p1_last_types": [
+      "fire",
+      "bug_steel",
+      "fighting",
+      "ice_water",
+      "grass_psychic",
+      "ground_rock",
+      "normal",
+      "ground_steel",
+      "ground_ice",
+      "dark",
+      "psychic_water",
+      "electric_flying",
+      "water",
+      "dark_rock",
+      "ghost_poison",
+      "psychic",
+      "bug_fighting",
+      "ghost",
+      "dragon_flying",
+      "ground_poison",
+      "ground",
+      "electric",
+      "bug_poison",
+      "poison_water",
+      "flying_steel",
+      "poison",
+      "ground_water",
+      "grass_poison",
+      "grass",
+      "dragon_water",
+      "normal_psychic",
+      "fire_flying",
+      "dark_fire",
+      "ice_psychic",
+      "flying_poison",
+      "flying_rock",
+      "flying_normal",
+      "flying_grass",
+      "flying_ground",
+      "flying_water",
+      "bug_rock",
+      "electric_steel",
+      "electric_water",
+      "bug_flying",
+      "fighting_water",
+      "flying_ice",
+      "dark_ice",
+      "dragon",
+      "rock_water",
+      "bug_grass",
+      "flying_psychic",
+      "rock",
+      "bug",
+      "dark_flying",
+      "fire_rock"
+    ],
+    "p2_last_name": [
+      "forretress",
+      "steelix",
+      "machamp",
+      "snorlax",
+      "zapdos",
+      "raikou",
+      "tyranitar",
+      "gengar",
+      "rhydon",
+      "vaporeon",
+      "blissey",
+      "cloyster",
+      "skarmory",
+      "fearow",
+      "exeggutor",
+      "miltank",
+      "starmie",
+      "scyther",
+      "dragonite",
+      "jynx",
+      "piloswine",
+      "venusaur",
+      "marowak",
+      "porygon2",
+      "clefable",
+      "alakazam",
+      "tentacruel",
+      "umbreon",
+      "sudowoodo",
+      "ampharos",
+      "quagsire",
+      "misdreavus",
+      "jolteon",
+      "nidoking",
+      "weezing",
+      "suicune",
+      "shuckle",
+      "blastoise",
+      "lanturn",
+      "kingdra",
+      "chansey",
+      "golem",
+      "smeargle",
+      "sandslash",
+      "heracross",
+      "electabuzz",
+      "kadabra",
+      "houndoom",
+      "qwilfish",
+      "feraligatr",
+      "dodrio",
+      "vileplume",
+      "meganium",
+      "charizard",
+      "kangaskhan",
+      "sunflora",
+      "granbull",
+      "typhlosion",
+      "nidoqueen",
+      "ursaring",
+      "moltres",
+      "espeon",
+      "dugtrio",
+      "muk",
+      "slowbro",
+      "mrmime",
+      "hitmontop",
+      "pichu",
+      "scizor",
+      "lapras",
+      "exeggcute",
+      "aerodactyl",
+      "arcanine",
+      "flareon",
+      "bellossom",
+      "entei",
+      "hitmonchan",
+      "hitmonlee",
+      "pinsir",
+      "lickitung",
+      "sneasel",
+      "onix",
+      "staryu",
+      "octillery",
+      "hoppip",
+      "quilava",
+      "raichu",
+      "pikachu",
+      "articuno",
+      "poliwrath",
+      "gloom",
+      "politoed",
+      "victreebel",
+      "murkrow",
+      "tauros",
+      "paras",
+      "xatu",
+      "noctowl",
+      "gyarados",
+      "omastar",
+      "magneton",
+      "elekid",
+      "porygon",
+      "wobbuffet",
+      "furret",
+      "tangela",
+      "wartortle",
+      "mantine",
+      "crobat",
+      "graveler",
+      "dunsparce",
+      "dewgong",
+      "marill",
+      "stantler",
+      "chikorita",
+      "venomoth",
+      "parasect",
+      "ditto",
+      "corsola",
+      "raticate",
+      "pineco",
+      "primeape",
+      "ninetales",
+      "donphan",
+      "machoke",
+      "mankey",
+      "houndour",
+      "doduo",
+      "diglett",
+      "gligar",
+      "pidgeot",
+      "cleffa",
+      "weepinbell",
+      "togepi",
+      "dragonair",
+      "rapidash",
+      "natu",
+      "girafarig",
+      "electrode",
+      "arbok",
+      "poliwhirl",
+      "kabutops",
+      "ledian",
+      "flaaffy",
+      "yanma",
+      "grimer",
+      "magmar",
+      "gastly",
+      "wigglytuff",
+      "charmeleon",
+      "jumpluff",
+      "bayleef",
+      "cubone",
+      "delibird",
+      "hypno",
+      "magnemite",
+      "slowpoke",
+      "psyduck",
+      "slowking",
+      "azumarill",
+      "machop",
+      "poliwag",
+      "golduck",
+      "haunter",
+      "dratini",
+      "nidoranf",
+      "croconaw",
+      "pupitar",
+      "venonat",
+      "zubat",
+      "butterfree",
+      "beedrill"
+    ],
+    "p2_last_move": [
+      "spikes",
+      "earthquake",
+      "crosschop",
+      "doubleedge",
+      "hiddenpower",
+      "thunder",
+      "pursuit",
+      "rest",
+      "curse",
+      "perishsong",
+      "roar",
+      "icebeam",
+      "toxic",
+      "sleeptalk",
+      "surf",
+      "drillpeck",
+      "thunderbolt",
+      "protect",
+      "return",
+      "stunspore",
+      "icepunch",
+      "thief",
+      "endure",
+      "dynamicpunch",
+      "explosion",
+      "flamethrower",
+      "bodyslam",
+      "leechseed",
+      "reflect",
+      "swordsdance",
+      "firepunch",
+      "rapidspin",
+      "crunch",
+      "charm",
+      "psychic",
+      "substitute",
+      "fireblast",
+      "rockslide",
+      "whirlwind",
+      "sludgebomb",
+      "confuseray",
+      "thunderwave",
+      "bite",
+      "irontail",
+      "lovelykiss",
+      "recover",
+      "healbell",
+      "smokescreen",
+      "bellydrum",
+      "gigadrain",
+      "steelwing",
+      "growth",
+      "softboiled",
+      "growl",
+      "sleeppowder",
+      "batonpass",
+      "megahorn",
+      "present",
+      "spore",
+      "cometpunch",
+      "hypnosis",
+      "seismictoss",
+      "lightscreen",
+      "thunderpunch",
+      "synthesis",
+      "sacredfire",
+      "meanlook",
+      "reversal",
+      "rollingkick",
+      "whirlpool",
+      "frustration",
+      "confusion",
+      "waterfall",
+      "sunnyday",
+      "solarbeam",
+      "hyperbeam",
+      "defensecurl",
+      "extremespeed",
+      "shadowball",
+      "moonlight",
+      "hydropump",
+      "ancientpower",
+      "sandattack",
+      "milkdrink",
+      "submission",
+      "meditate",
+      "feintattack",
+      "selfdestruct",
+      "headbutt",
+      "morningsun",
+      "agility",
+      "counter",
+      "flash",
+      "highjumpkick",
+      "nightmare",
+      "acidarmor",
+      "razorleaf",
+      "skyattack",
+      "dragonbreath",
+      "screech",
+      "encore",
+      "mimic",
+      "wingattack",
+      "raindance",
+      "rollout",
+      "machpunch",
+      "attract",
+      "quickattack",
+      "bonemerang",
+      "clamp",
+      "zapcannon",
+      "struggle",
+      "poisonpowder",
+      "sandstorm",
+      "megakick",
+      "destinybond",
+      "mudslap",
+      "strength",
+      "superfang",
+      "octazooka",
+      "disable",
+      "outrage",
+      "blizzard",
+      "thundershock",
+      "painsplit",
+      "detect",
+      "spark",
+      "triattack",
+      "icywind",
+      "haze",
+      "sweetkiss",
+      "swagger",
+      "eggbomb",
+      "tackle",
+      "supersonic",
+      "slash",
+      "spiderweb",
+      "cut",
+      "metronome",
+      "mirrorcoat",
+      "fly",
+      "dreameater",
+      "megadrain",
+      "hornattack",
+      "bide",
+      "karatechop",
+      "nightshade",
+      "amnesia",
+      "rage",
+      "rockthrow",
+      "firespin",
+      "sing",
+      "lowkick",
+      "doublekick",
+      "twineedle"
+    ],
+    "p2_last_status": [
+      "nostatus",
+      "tox",
+      "fnt",
+      "par",
+      "slp",
+      "frz",
+      "psn",
+      "brn"
+    ],
+    "p2_last_types": [
+      "bug_steel",
+      "ground_steel",
+      "fighting",
+      "normal",
+      "electric_flying",
+      "electric",
+      "dark_rock",
+      "ghost_poison",
+      "ground_rock",
+      "water",
+      "ice_water",
+      "flying_steel",
+      "flying_normal",
+      "grass_psychic",
+      "psychic_water",
+      "bug_flying",
+      "dragon_flying",
+      "ice_psychic",
+      "ground_ice",
+      "grass_poison",
+      "ground",
+      "psychic",
+      "poison_water",
+      "dark",
+      "rock",
+      "ground_water",
+      "ghost",
+      "ground_poison",
+      "poison",
+      "bug_rock",
+      "electric_water",
+      "dragon_water",
+      "bug_fighting",
+      "dark_fire",
+      "grass",
+      "fire_flying",
+      "fire",
+      "flying_rock",
+      "bug",
+      "dark_ice",
+      "flying_grass",
+      "flying_ice",
+      "fighting_water",
+      "dark_flying",
+      "bug_grass",
+      "flying_psychic",
+      "flying_water",
+      "rock_water",
+      "electric_steel",
+      "flying_poison",
+      "bug_poison",
+      "flying_ground",
+      "unknown",
+      "dragon",
+      "normal_psychic"
+    ]
+  },
+  "species_lookup": {
+    "tyranitar": {
+      "base_hp": 100.0,
+      "base_atk": 134.0,
+      "base_def": 110.0,
+      "base_spa": 95.0,
+      "base_spd": 100.0,
+      "base_spe": 61.0,
+      "types": [
+        "dark",
+        "rock"
+      ]
+    },
+    "typhlosion": {
+      "base_hp": 78.0,
+      "base_atk": 84.0,
+      "base_def": 78.0,
+      "base_spa": 109.0,
+      "base_spd": 85.0,
+      "base_spe": 100.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "golem": {
+      "base_hp": 80.0,
+      "base_atk": 110.0,
+      "base_def": 130.0,
+      "base_spa": 55.0,
+      "base_spd": 65.0,
+      "base_spe": 45.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "umbreon": {
+      "base_hp": 95.0,
+      "base_atk": 65.0,
+      "base_def": 110.0,
+      "base_spa": 60.0,
+      "base_spd": 130.0,
+      "base_spe": 65.0,
+      "types": [
+        "dark"
+      ]
+    },
+    "alakazam": {
+      "base_hp": 55.0,
+      "base_atk": 50.0,
+      "base_def": 45.0,
+      "base_spa": 135.0,
+      "base_spd": 85.0,
+      "base_spe": 120.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "raikou": {
+      "base_hp": 90.0,
+      "base_atk": 85.0,
+      "base_def": 75.0,
+      "base_spa": 115.0,
+      "base_spd": 100.0,
+      "base_spe": 115.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "forretress": {
+      "base_hp": 75.0,
+      "base_atk": 90.0,
+      "base_def": 140.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 40.0,
+      "types": [
+        "bug",
+        "steel"
+      ]
+    },
+    "skarmory": {
+      "base_hp": 65.0,
+      "base_atk": 80.0,
+      "base_def": 140.0,
+      "base_spa": 40.0,
+      "base_spd": 70.0,
+      "base_spe": 70.0,
+      "types": [
+        "flying",
+        "steel"
+      ]
+    },
+    "misdreavus": {
+      "base_hp": 60.0,
+      "base_atk": 60.0,
+      "base_def": 60.0,
+      "base_spa": 85.0,
+      "base_spd": 85.0,
+      "base_spe": 85.0,
+      "types": [
+        "ghost"
+      ]
+    },
+    "snorlax": {
+      "base_hp": 160.0,
+      "base_atk": 110.0,
+      "base_def": 65.0,
+      "base_spa": 65.0,
+      "base_spd": 110.0,
+      "base_spe": 30.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "suicune": {
+      "base_hp": 100.0,
+      "base_atk": 75.0,
+      "base_def": 115.0,
+      "base_spa": 90.0,
+      "base_spd": 115.0,
+      "base_spe": 85.0,
+      "types": [
+        "water"
+      ]
+    },
+    "heracross": {
+      "base_hp": 80.0,
+      "base_atk": 125.0,
+      "base_def": 75.0,
+      "base_spa": 40.0,
+      "base_spd": 95.0,
+      "base_spe": 85.0,
+      "types": [
+        "bug",
+        "fighting"
+      ]
+    },
+    "cloyster": {
+      "base_hp": 50.0,
+      "base_atk": 95.0,
+      "base_def": 180.0,
+      "base_spa": 85.0,
+      "base_spd": 45.0,
+      "base_spe": 70.0,
+      "types": [
+        "ice",
+        "water"
+      ]
+    },
+    "machamp": {
+      "base_hp": 90.0,
+      "base_atk": 130.0,
+      "base_def": 80.0,
+      "base_spa": 65.0,
+      "base_spd": 85.0,
+      "base_spe": 55.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "exeggutor": {
+      "base_hp": 95.0,
+      "base_atk": 95.0,
+      "base_def": 85.0,
+      "base_spa": 125.0,
+      "base_spd": 65.0,
+      "base_spe": 55.0,
+      "types": [
+        "grass",
+        "psychic"
+      ]
+    },
+    "zapdos": {
+      "base_hp": 90.0,
+      "base_atk": 90.0,
+      "base_def": 85.0,
+      "base_spa": 125.0,
+      "base_spd": 90.0,
+      "base_spe": 100.0,
+      "types": [
+        "electric",
+        "flying"
+      ]
+    },
+    "blissey": {
+      "base_hp": 255.0,
+      "base_atk": 10.0,
+      "base_def": 10.0,
+      "base_spa": 75.0,
+      "base_spd": 135.0,
+      "base_spe": 55.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "nidoking": {
+      "base_hp": 81.0,
+      "base_atk": 92.0,
+      "base_def": 77.0,
+      "base_spa": 85.0,
+      "base_spd": 75.0,
+      "base_spe": 85.0,
+      "types": [
+        "ground",
+        "poison"
+      ]
+    },
+    "steelix": {
+      "base_hp": 75.0,
+      "base_atk": 85.0,
+      "base_def": 200.0,
+      "base_spa": 55.0,
+      "base_spd": 65.0,
+      "base_spe": 30.0,
+      "types": [
+        "ground",
+        "steel"
+      ]
+    },
+    "vaporeon": {
+      "base_hp": 130.0,
+      "base_atk": 65.0,
+      "base_def": 60.0,
+      "base_spa": 110.0,
+      "base_spd": 95.0,
+      "base_spe": 65.0,
+      "types": [
+        "water"
+      ]
+    },
+    "jynx": {
+      "base_hp": 65.0,
+      "base_atk": 50.0,
+      "base_def": 35.0,
+      "base_spa": 115.0,
+      "base_spd": 95.0,
+      "base_spe": 95.0,
+      "types": [
+        "ice",
+        "psychic"
+      ]
+    },
+    "rhydon": {
+      "base_hp": 105.0,
+      "base_atk": 130.0,
+      "base_def": 120.0,
+      "base_spa": 45.0,
+      "base_spd": 45.0,
+      "base_spe": 40.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "kingdra": {
+      "base_hp": 75.0,
+      "base_atk": 95.0,
+      "base_def": 95.0,
+      "base_spa": 95.0,
+      "base_spd": 95.0,
+      "base_spe": 85.0,
+      "types": [
+        "dragon",
+        "water"
+      ]
+    },
+    "scizor": {
+      "base_hp": 70.0,
+      "base_atk": 130.0,
+      "base_def": 100.0,
+      "base_spa": 55.0,
+      "base_spd": 80.0,
+      "base_spe": 65.0,
+      "types": [
+        "bug",
+        "steel"
+      ]
+    },
+    "houndoom": {
+      "base_hp": 75.0,
+      "base_atk": 90.0,
+      "base_def": 50.0,
+      "base_spa": 110.0,
+      "base_spd": 80.0,
+      "base_spe": 95.0,
+      "types": [
+        "dark",
+        "fire"
+      ]
+    },
+    "gengar": {
+      "base_hp": 60.0,
+      "base_atk": 65.0,
+      "base_def": 60.0,
+      "base_spa": 130.0,
+      "base_spd": 75.0,
+      "base_spe": 110.0,
+      "types": [
+        "ghost",
+        "poison"
+      ]
+    },
+    "jumpluff": {
+      "base_hp": 75.0,
+      "base_atk": 55.0,
+      "base_def": 70.0,
+      "base_spa": 55.0,
+      "base_spd": 85.0,
+      "base_spe": 110.0,
+      "types": [
+        "flying",
+        "grass"
+      ]
+    },
+    "smeargle": {
+      "base_hp": 55.0,
+      "base_atk": 20.0,
+      "base_def": 35.0,
+      "base_spa": 20.0,
+      "base_spd": 45.0,
+      "base_spe": 75.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "poliwrath": {
+      "base_hp": 90.0,
+      "base_atk": 85.0,
+      "base_def": 95.0,
+      "base_spa": 70.0,
+      "base_spd": 90.0,
+      "base_spe": 70.0,
+      "types": [
+        "fighting",
+        "water"
+      ]
+    },
+    "piloswine": {
+      "base_hp": 100.0,
+      "base_atk": 100.0,
+      "base_def": 80.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 50.0,
+      "types": [
+        "ground",
+        "ice"
+      ]
+    },
+    "aerodactyl": {
+      "base_hp": 80.0,
+      "base_atk": 105.0,
+      "base_def": 65.0,
+      "base_spa": 60.0,
+      "base_spd": 75.0,
+      "base_spe": 130.0,
+      "types": [
+        "flying",
+        "rock"
+      ]
+    },
+    "starmie": {
+      "base_hp": 60.0,
+      "base_atk": 75.0,
+      "base_def": 85.0,
+      "base_spa": 100.0,
+      "base_spd": 85.0,
+      "base_spe": 115.0,
+      "types": [
+        "psychic",
+        "water"
+      ]
+    },
+    "marowak": {
+      "base_hp": 60.0,
+      "base_atk": 80.0,
+      "base_def": 110.0,
+      "base_spa": 50.0,
+      "base_spd": 80.0,
+      "base_spe": 45.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "dragonite": {
+      "base_hp": 91.0,
+      "base_atk": 134.0,
+      "base_def": 95.0,
+      "base_spa": 100.0,
+      "base_spd": 100.0,
+      "base_spe": 80.0,
+      "types": [
+        "dragon",
+        "flying"
+      ]
+    },
+    "miltank": {
+      "base_hp": 95.0,
+      "base_atk": 80.0,
+      "base_def": 105.0,
+      "base_spa": 40.0,
+      "base_spd": 70.0,
+      "base_spe": 100.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "fearow": {
+      "base_hp": 65.0,
+      "base_atk": 90.0,
+      "base_def": 65.0,
+      "base_spa": 61.0,
+      "base_spd": 61.0,
+      "base_spe": 100.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "graveler": {
+      "base_hp": 55.0,
+      "base_atk": 95.0,
+      "base_def": 115.0,
+      "base_spa": 45.0,
+      "base_spd": 45.0,
+      "base_spe": 35.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "hitmonchan": {
+      "base_hp": 50.0,
+      "base_atk": 105.0,
+      "base_def": 79.0,
+      "base_spa": 35.0,
+      "base_spd": 110.0,
+      "base_spe": 76.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "mrmime": {
+      "base_hp": 40.0,
+      "base_atk": 45.0,
+      "base_def": 65.0,
+      "base_spa": 100.0,
+      "base_spd": 120.0,
+      "base_spe": 90.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "pikachu": {
+      "base_hp": 35.0,
+      "base_atk": 55.0,
+      "base_def": 30.0,
+      "base_spa": 50.0,
+      "base_spd": 40.0,
+      "base_spe": 90.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "rapidash": {
+      "base_hp": 65.0,
+      "base_atk": 100.0,
+      "base_def": 70.0,
+      "base_spa": 80.0,
+      "base_spd": 80.0,
+      "base_spe": 105.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "clefable": {
+      "base_hp": 95.0,
+      "base_atk": 70.0,
+      "base_def": 73.0,
+      "base_spa": 85.0,
+      "base_spd": 90.0,
+      "base_spe": 60.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "porygon2": {
+      "base_hp": 85.0,
+      "base_atk": 80.0,
+      "base_def": 90.0,
+      "base_spa": 105.0,
+      "base_spd": 95.0,
+      "base_spe": 60.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "tauros": {
+      "base_hp": 75.0,
+      "base_atk": 100.0,
+      "base_def": 95.0,
+      "base_spa": 40.0,
+      "base_spd": 70.0,
+      "base_spe": 110.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "entei": {
+      "base_hp": 115.0,
+      "base_atk": 115.0,
+      "base_def": 85.0,
+      "base_spa": 90.0,
+      "base_spd": 75.0,
+      "base_spe": 100.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "magneton": {
+      "base_hp": 50.0,
+      "base_atk": 60.0,
+      "base_def": 95.0,
+      "base_spa": 120.0,
+      "base_spd": 70.0,
+      "base_spe": 70.0,
+      "types": [
+        "electric",
+        "steel"
+      ]
+    },
+    "electrode": {
+      "base_hp": 60.0,
+      "base_atk": 50.0,
+      "base_def": 70.0,
+      "base_spa": 80.0,
+      "base_spd": 80.0,
+      "base_spe": 140.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "ampharos": {
+      "base_hp": 90.0,
+      "base_atk": 75.0,
+      "base_def": 75.0,
+      "base_spa": 115.0,
+      "base_spd": 90.0,
+      "base_spe": 55.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "pidgeot": {
+      "base_hp": 83.0,
+      "base_atk": 80.0,
+      "base_def": 75.0,
+      "base_spa": 70.0,
+      "base_spd": 70.0,
+      "base_spe": 91.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "pinsir": {
+      "base_hp": 65.0,
+      "base_atk": 125.0,
+      "base_def": 100.0,
+      "base_spa": 55.0,
+      "base_spd": 70.0,
+      "base_spe": 85.0,
+      "types": [
+        "bug"
+      ]
+    },
+    "quagsire": {
+      "base_hp": 95.0,
+      "base_atk": 85.0,
+      "base_def": 85.0,
+      "base_spa": 65.0,
+      "base_spd": 65.0,
+      "base_spe": 35.0,
+      "types": [
+        "ground",
+        "water"
+      ]
+    },
+    "slowbro": {
+      "base_hp": 95.0,
+      "base_atk": 75.0,
+      "base_def": 110.0,
+      "base_spa": 100.0,
+      "base_spd": 80.0,
+      "base_spe": 30.0,
+      "types": [
+        "psychic",
+        "water"
+      ]
+    },
+    "jolteon": {
+      "base_hp": 65.0,
+      "base_atk": 65.0,
+      "base_def": 60.0,
+      "base_spa": 110.0,
+      "base_spd": 95.0,
+      "base_spe": 130.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "feraligatr": {
+      "base_hp": 85.0,
+      "base_atk": 105.0,
+      "base_def": 100.0,
+      "base_spa": 79.0,
+      "base_spd": 83.0,
+      "base_spe": 78.0,
+      "types": [
+        "water"
+      ]
+    },
+    "stantler": {
+      "base_hp": 73.0,
+      "base_atk": 95.0,
+      "base_def": 62.0,
+      "base_spa": 85.0,
+      "base_spd": 65.0,
+      "base_spe": 85.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "venomoth": {
+      "base_hp": 70.0,
+      "base_atk": 65.0,
+      "base_def": 60.0,
+      "base_spa": 90.0,
+      "base_spd": 75.0,
+      "base_spe": 90.0,
+      "types": [
+        "bug",
+        "poison"
+      ]
+    },
+    "machoke": {
+      "base_hp": 80.0,
+      "base_atk": 100.0,
+      "base_def": 70.0,
+      "base_spa": 50.0,
+      "base_spd": 60.0,
+      "base_spe": 45.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "poliwhirl": {
+      "base_hp": 65.0,
+      "base_atk": 65.0,
+      "base_def": 65.0,
+      "base_spa": 50.0,
+      "base_spd": 50.0,
+      "base_spe": 90.0,
+      "types": [
+        "water"
+      ]
+    },
+    "qwilfish": {
+      "base_hp": 65.0,
+      "base_atk": 95.0,
+      "base_def": 75.0,
+      "base_spa": 55.0,
+      "base_spd": 55.0,
+      "base_spe": 85.0,
+      "types": [
+        "poison",
+        "water"
+      ]
+    },
+    "moltres": {
+      "base_hp": 90.0,
+      "base_atk": 100.0,
+      "base_def": 90.0,
+      "base_spa": 125.0,
+      "base_spd": 85.0,
+      "base_spe": 90.0,
+      "types": [
+        "fire",
+        "flying"
+      ]
+    },
+    "tentacruel": {
+      "base_hp": 80.0,
+      "base_atk": 70.0,
+      "base_def": 65.0,
+      "base_spa": 80.0,
+      "base_spd": 120.0,
+      "base_spe": 100.0,
+      "types": [
+        "poison",
+        "water"
+      ]
+    },
+    "venusaur": {
+      "base_hp": 80.0,
+      "base_atk": 82.0,
+      "base_def": 83.0,
+      "base_spa": 100.0,
+      "base_spd": 100.0,
+      "base_spe": 80.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "murkrow": {
+      "base_hp": 60.0,
+      "base_atk": 85.0,
+      "base_def": 42.0,
+      "base_spa": 85.0,
+      "base_spd": 42.0,
+      "base_spe": 91.0,
+      "types": [
+        "dark",
+        "flying"
+      ]
+    },
+    "hitmontop": {
+      "base_hp": 50.0,
+      "base_atk": 95.0,
+      "base_def": 95.0,
+      "base_spa": 35.0,
+      "base_spd": 110.0,
+      "base_spe": 70.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "dugtrio": {
+      "base_hp": 35.0,
+      "base_atk": 80.0,
+      "base_def": 50.0,
+      "base_spa": 50.0,
+      "base_spd": 70.0,
+      "base_spe": 120.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "muk": {
+      "base_hp": 105.0,
+      "base_atk": 105.0,
+      "base_def": 75.0,
+      "base_spa": 65.0,
+      "base_spd": 100.0,
+      "base_spe": 50.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "scyther": {
+      "base_hp": 70.0,
+      "base_atk": 110.0,
+      "base_def": 80.0,
+      "base_spa": 55.0,
+      "base_spd": 80.0,
+      "base_spe": 105.0,
+      "types": [
+        "bug",
+        "flying"
+      ]
+    },
+    "weezing": {
+      "base_hp": 65.0,
+      "base_atk": 90.0,
+      "base_def": 120.0,
+      "base_spa": 85.0,
+      "base_spd": 70.0,
+      "base_spe": 60.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "crobat": {
+      "base_hp": 85.0,
+      "base_atk": 90.0,
+      "base_def": 80.0,
+      "base_spa": 70.0,
+      "base_spd": 80.0,
+      "base_spe": 130.0,
+      "types": [
+        "flying",
+        "poison"
+      ]
+    },
+    "articuno": {
+      "base_hp": 90.0,
+      "base_atk": 85.0,
+      "base_def": 100.0,
+      "base_spa": 95.0,
+      "base_spd": 125.0,
+      "base_spe": 85.0,
+      "types": [
+        "flying",
+        "ice"
+      ]
+    },
+    "meganium": {
+      "base_hp": 80.0,
+      "base_atk": 82.0,
+      "base_def": 100.0,
+      "base_spa": 83.0,
+      "base_spd": 100.0,
+      "base_spe": 80.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "charizard": {
+      "base_hp": 78.0,
+      "base_atk": 84.0,
+      "base_def": 78.0,
+      "base_spa": 109.0,
+      "base_spd": 85.0,
+      "base_spe": 100.0,
+      "types": [
+        "fire",
+        "flying"
+      ]
+    },
+    "dodrio": {
+      "base_hp": 60.0,
+      "base_atk": 110.0,
+      "base_def": 70.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 100.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "primeape": {
+      "base_hp": 65.0,
+      "base_atk": 105.0,
+      "base_def": 60.0,
+      "base_spa": 60.0,
+      "base_spd": 70.0,
+      "base_spe": 95.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "lanturn": {
+      "base_hp": 125.0,
+      "base_atk": 58.0,
+      "base_def": 58.0,
+      "base_spa": 76.0,
+      "base_spd": 76.0,
+      "base_spe": 67.0,
+      "types": [
+        "electric",
+        "water"
+      ]
+    },
+    "girafarig": {
+      "base_hp": 70.0,
+      "base_atk": 80.0,
+      "base_def": 65.0,
+      "base_spa": 90.0,
+      "base_spd": 65.0,
+      "base_spe": 85.0,
+      "types": [
+        "normal",
+        "psychic"
+      ]
+    },
+    "nidoqueen": {
+      "base_hp": 90.0,
+      "base_atk": 82.0,
+      "base_def": 87.0,
+      "base_spa": 75.0,
+      "base_spd": 85.0,
+      "base_spe": 76.0,
+      "types": [
+        "ground",
+        "poison"
+      ]
+    },
+    "gyarados": {
+      "base_hp": 95.0,
+      "base_atk": 125.0,
+      "base_def": 79.0,
+      "base_spa": 60.0,
+      "base_spd": 100.0,
+      "base_spe": 81.0,
+      "types": [
+        "flying",
+        "water"
+      ]
+    },
+    "chansey": {
+      "base_hp": 250.0,
+      "base_atk": 5.0,
+      "base_def": 5.0,
+      "base_spa": 35.0,
+      "base_spd": 105.0,
+      "base_spe": 50.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "electabuzz": {
+      "base_hp": 65.0,
+      "base_atk": 83.0,
+      "base_def": 57.0,
+      "base_spa": 95.0,
+      "base_spd": 85.0,
+      "base_spe": 105.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "victreebel": {
+      "base_hp": 80.0,
+      "base_atk": 105.0,
+      "base_def": 65.0,
+      "base_spa": 100.0,
+      "base_spd": 60.0,
+      "base_spe": 70.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "flareon": {
+      "base_hp": 65.0,
+      "base_atk": 130.0,
+      "base_def": 60.0,
+      "base_spa": 95.0,
+      "base_spd": 110.0,
+      "base_spe": 65.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "quilava": {
+      "base_hp": 58.0,
+      "base_atk": 64.0,
+      "base_def": 58.0,
+      "base_spa": 80.0,
+      "base_spd": 65.0,
+      "base_spe": 80.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "hypno": {
+      "base_hp": 85.0,
+      "base_atk": 73.0,
+      "base_def": 70.0,
+      "base_spa": 73.0,
+      "base_spd": 115.0,
+      "base_spe": 67.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "exeggcute": {
+      "base_hp": 60.0,
+      "base_atk": 40.0,
+      "base_def": 80.0,
+      "base_spa": 60.0,
+      "base_spd": 45.0,
+      "base_spe": 40.0,
+      "types": [
+        "grass",
+        "psychic"
+      ]
+    },
+    "pidgeotto": {
+      "base_hp": 63.0,
+      "base_atk": 60.0,
+      "base_def": 55.0,
+      "base_spa": 50.0,
+      "base_spd": 50.0,
+      "base_spe": 71.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "blastoise": {
+      "base_hp": 79.0,
+      "base_atk": 83.0,
+      "base_def": 100.0,
+      "base_spa": 85.0,
+      "base_spd": 105.0,
+      "base_spe": 78.0,
+      "types": [
+        "water"
+      ]
+    },
+    "espeon": {
+      "base_hp": 65.0,
+      "base_atk": 65.0,
+      "base_def": 60.0,
+      "base_spa": 130.0,
+      "base_spd": 95.0,
+      "base_spe": 110.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "staryu": {
+      "base_hp": 30.0,
+      "base_atk": 45.0,
+      "base_def": 55.0,
+      "base_spa": 70.0,
+      "base_spd": 55.0,
+      "base_spe": 85.0,
+      "types": [
+        "water"
+      ]
+    },
+    "magnemite": {
+      "base_hp": 25.0,
+      "base_atk": 35.0,
+      "base_def": 70.0,
+      "base_spa": 95.0,
+      "base_spd": 55.0,
+      "base_spe": 45.0,
+      "types": [
+        "electric",
+        "steel"
+      ]
+    },
+    "vulpix": {
+      "base_hp": 38.0,
+      "base_atk": 41.0,
+      "base_def": 40.0,
+      "base_spa": 50.0,
+      "base_spd": 65.0,
+      "base_spe": 65.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "gastly": {
+      "base_hp": 30.0,
+      "base_atk": 35.0,
+      "base_def": 30.0,
+      "base_spa": 100.0,
+      "base_spd": 35.0,
+      "base_spe": 80.0,
+      "types": [
+        "ghost",
+        "poison"
+      ]
+    },
+    "mankey": {
+      "base_hp": 40.0,
+      "base_atk": 80.0,
+      "base_def": 35.0,
+      "base_spa": 35.0,
+      "base_spd": 45.0,
+      "base_spe": 70.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "rattata": {
+      "base_hp": 30.0,
+      "base_atk": 56.0,
+      "base_def": 35.0,
+      "base_spa": 25.0,
+      "base_spd": 35.0,
+      "base_spe": 72.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "sandslash": {
+      "base_hp": 75.0,
+      "base_atk": 100.0,
+      "base_def": 110.0,
+      "base_spa": 45.0,
+      "base_spd": 55.0,
+      "base_spe": 65.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "kangaskhan": {
+      "base_hp": 105.0,
+      "base_atk": 95.0,
+      "base_def": 80.0,
+      "base_spa": 40.0,
+      "base_spd": 80.0,
+      "base_spe": 90.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "aipom": {
+      "base_hp": 55.0,
+      "base_atk": 70.0,
+      "base_def": 55.0,
+      "base_spa": 40.0,
+      "base_spd": 55.0,
+      "base_spe": 85.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "granbull": {
+      "base_hp": 90.0,
+      "base_atk": 120.0,
+      "base_def": 75.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 45.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "kadabra": {
+      "base_hp": 40.0,
+      "base_atk": 35.0,
+      "base_def": 30.0,
+      "base_spa": 120.0,
+      "base_spd": 70.0,
+      "base_spe": 105.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "haunter": {
+      "base_hp": 45.0,
+      "base_atk": 50.0,
+      "base_def": 45.0,
+      "base_spa": 115.0,
+      "base_spd": 55.0,
+      "base_spe": 95.0,
+      "types": [
+        "ghost",
+        "poison"
+      ]
+    },
+    "wartortle": {
+      "base_hp": 59.0,
+      "base_atk": 63.0,
+      "base_def": 80.0,
+      "base_spa": 65.0,
+      "base_spd": 80.0,
+      "base_spe": 58.0,
+      "types": [
+        "water"
+      ]
+    },
+    "ivysaur": {
+      "base_hp": 60.0,
+      "base_atk": 62.0,
+      "base_def": 63.0,
+      "base_spa": 80.0,
+      "base_spd": 80.0,
+      "base_spe": 60.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "donphan": {
+      "base_hp": 90.0,
+      "base_atk": 120.0,
+      "base_def": 120.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 50.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "ariados": {
+      "base_hp": 70.0,
+      "base_atk": 90.0,
+      "base_def": 70.0,
+      "base_spa": 60.0,
+      "base_spd": 60.0,
+      "base_spe": 40.0,
+      "types": [
+        "bug",
+        "poison"
+      ]
+    },
+    "hitmonlee": {
+      "base_hp": 50.0,
+      "base_atk": 120.0,
+      "base_def": 53.0,
+      "base_spa": 35.0,
+      "base_spd": 110.0,
+      "base_spe": 87.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "bellossom": {
+      "base_hp": 75.0,
+      "base_atk": 80.0,
+      "base_def": 85.0,
+      "base_spa": 90.0,
+      "base_spd": 100.0,
+      "base_spe": 50.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "magmar": {
+      "base_hp": 65.0,
+      "base_atk": 95.0,
+      "base_def": 57.0,
+      "base_spa": 100.0,
+      "base_spd": 85.0,
+      "base_spe": 93.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "ursaring": {
+      "base_hp": 90.0,
+      "base_atk": 130.0,
+      "base_def": 75.0,
+      "base_spa": 75.0,
+      "base_spd": 75.0,
+      "base_spe": 55.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "shuckle": {
+      "base_hp": 20.0,
+      "base_atk": 10.0,
+      "base_def": 230.0,
+      "base_spa": 10.0,
+      "base_spd": 230.0,
+      "base_spe": 5.0,
+      "types": [
+        "bug",
+        "rock"
+      ]
+    },
+    "seel": {
+      "base_hp": 65.0,
+      "base_atk": 45.0,
+      "base_def": 55.0,
+      "base_spa": 45.0,
+      "base_spd": 70.0,
+      "base_spe": 45.0,
+      "types": [
+        "water"
+      ]
+    },
+    "vileplume": {
+      "base_hp": 75.0,
+      "base_atk": 80.0,
+      "base_def": 85.0,
+      "base_spa": 100.0,
+      "base_spd": 90.0,
+      "base_spe": 50.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "arbok": {
+      "base_hp": 60.0,
+      "base_atk": 85.0,
+      "base_def": 69.0,
+      "base_spa": 65.0,
+      "base_spd": 79.0,
+      "base_spe": 80.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "farfetchd": {
+      "base_hp": 52.0,
+      "base_atk": 65.0,
+      "base_def": 55.0,
+      "base_spa": 58.0,
+      "base_spd": 62.0,
+      "base_spe": 60.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "ditto": {
+      "base_hp": 48.0,
+      "base_atk": 48.0,
+      "base_def": 48.0,
+      "base_spa": 48.0,
+      "base_spd": 48.0,
+      "base_spe": 48.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "clefairy": {
+      "base_hp": 70.0,
+      "base_atk": 45.0,
+      "base_def": 48.0,
+      "base_spa": 60.0,
+      "base_spd": 65.0,
+      "base_spe": 35.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "bayleef": {
+      "base_hp": 60.0,
+      "base_atk": 62.0,
+      "base_def": 80.0,
+      "base_spa": 63.0,
+      "base_spd": 80.0,
+      "base_spe": 60.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "butterfree": {
+      "base_hp": 60.0,
+      "base_atk": 45.0,
+      "base_def": 50.0,
+      "base_spa": 80.0,
+      "base_spd": 80.0,
+      "base_spe": 70.0,
+      "types": [
+        "bug",
+        "flying"
+      ]
+    },
+    "slowking": {
+      "base_hp": 95.0,
+      "base_atk": 75.0,
+      "base_def": 80.0,
+      "base_spa": 100.0,
+      "base_spd": 110.0,
+      "base_spe": 30.0,
+      "types": [
+        "psychic",
+        "water"
+      ]
+    },
+    "elekid": {
+      "base_hp": 45.0,
+      "base_atk": 63.0,
+      "base_def": 37.0,
+      "base_spa": 65.0,
+      "base_spd": 55.0,
+      "base_spe": 95.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "houndour": {
+      "base_hp": 45.0,
+      "base_atk": 60.0,
+      "base_def": 30.0,
+      "base_spa": 80.0,
+      "base_spd": 50.0,
+      "base_spe": 65.0,
+      "types": [
+        "dark",
+        "fire"
+      ]
+    },
+    "pineco": {
+      "base_hp": 50.0,
+      "base_atk": 65.0,
+      "base_def": 90.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 15.0,
+      "types": [
+        "bug"
+      ]
+    },
+    "machop": {
+      "base_hp": 70.0,
+      "base_atk": 80.0,
+      "base_def": 50.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 35.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "octillery": {
+      "base_hp": 75.0,
+      "base_atk": 105.0,
+      "base_def": 75.0,
+      "base_spa": 105.0,
+      "base_spd": 75.0,
+      "base_spe": 45.0,
+      "types": [
+        "water"
+      ]
+    },
+    "hooh": {
+      "base_hp": 106.0,
+      "base_atk": 130.0,
+      "base_def": 90.0,
+      "base_spa": 110.0,
+      "base_spd": 154.0,
+      "base_spe": 90.0,
+      "types": [
+        "fire",
+        "flying"
+      ]
+    },
+    "sneasel": {
+      "base_hp": 55.0,
+      "base_atk": 95.0,
+      "base_def": 55.0,
+      "base_spa": 35.0,
+      "base_spd": 75.0,
+      "base_spe": 115.0,
+      "types": [
+        "dark",
+        "ice"
+      ]
+    },
+    "gligar": {
+      "base_hp": 65.0,
+      "base_atk": 75.0,
+      "base_def": 105.0,
+      "base_spa": 35.0,
+      "base_spd": 65.0,
+      "base_spe": 85.0,
+      "types": [
+        "flying",
+        "ground"
+      ]
+    },
+    "weepinbell": {
+      "base_hp": 65.0,
+      "base_atk": 90.0,
+      "base_def": 50.0,
+      "base_spa": 85.0,
+      "base_spd": 45.0,
+      "base_spe": 55.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "raichu": {
+      "base_hp": 60.0,
+      "base_atk": 90.0,
+      "base_def": 55.0,
+      "base_spa": 90.0,
+      "base_spd": 80.0,
+      "base_spe": 100.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "politoed": {
+      "base_hp": 90.0,
+      "base_atk": 75.0,
+      "base_def": 75.0,
+      "base_spa": 90.0,
+      "base_spd": 100.0,
+      "base_spe": 70.0,
+      "types": [
+        "water"
+      ]
+    },
+    "lickitung": {
+      "base_hp": 90.0,
+      "base_atk": 55.0,
+      "base_def": 75.0,
+      "base_spa": 60.0,
+      "base_spd": 75.0,
+      "base_spe": 30.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "kingler": {
+      "base_hp": 55.0,
+      "base_atk": 130.0,
+      "base_def": 115.0,
+      "base_spa": 50.0,
+      "base_spd": 50.0,
+      "base_spe": 75.0,
+      "types": [
+        "water"
+      ]
+    },
+    "sudowoodo": {
+      "base_hp": 70.0,
+      "base_atk": 100.0,
+      "base_def": 115.0,
+      "base_spa": 30.0,
+      "base_spd": 65.0,
+      "base_spe": 30.0,
+      "types": [
+        "rock"
+      ]
+    },
+    "hoppip": {
+      "base_hp": 35.0,
+      "base_atk": 35.0,
+      "base_def": 40.0,
+      "base_spa": 35.0,
+      "base_spd": 55.0,
+      "base_spe": 50.0,
+      "types": [
+        "flying",
+        "grass"
+      ]
+    },
+    "marill": {
+      "base_hp": 70.0,
+      "base_atk": 20.0,
+      "base_def": 50.0,
+      "base_spa": 20.0,
+      "base_spd": 50.0,
+      "base_spe": 40.0,
+      "types": [
+        "water"
+      ]
+    },
+    "swinub": {
+      "base_hp": 50.0,
+      "base_atk": 50.0,
+      "base_def": 40.0,
+      "base_spa": 30.0,
+      "base_spd": 30.0,
+      "base_spe": 50.0,
+      "types": [
+        "ground",
+        "ice"
+      ]
+    },
+    "pichu": {
+      "base_hp": 20.0,
+      "base_atk": 40.0,
+      "base_def": 15.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 60.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "pidgey": {
+      "base_hp": 40.0,
+      "base_atk": 45.0,
+      "base_def": 40.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 56.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "venonat": {
+      "base_hp": 60.0,
+      "base_atk": 55.0,
+      "base_def": 50.0,
+      "base_spa": 40.0,
+      "base_spd": 55.0,
+      "base_spe": 45.0,
+      "types": [
+        "bug",
+        "poison"
+      ]
+    },
+    "golbat": {
+      "base_hp": 75.0,
+      "base_atk": 80.0,
+      "base_def": 70.0,
+      "base_spa": 65.0,
+      "base_spd": 75.0,
+      "base_spe": 90.0,
+      "types": [
+        "flying",
+        "poison"
+      ]
+    },
+    "persian": {
+      "base_hp": 65.0,
+      "base_atk": 70.0,
+      "base_def": 60.0,
+      "base_spa": 65.0,
+      "base_spd": 65.0,
+      "base_spe": 115.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "arcanine": {
+      "base_hp": 90.0,
+      "base_atk": 110.0,
+      "base_def": 80.0,
+      "base_spa": 100.0,
+      "base_spd": 80.0,
+      "base_spe": 95.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "kabutops": {
+      "base_hp": 60.0,
+      "base_atk": 115.0,
+      "base_def": 105.0,
+      "base_spa": 65.0,
+      "base_spd": 70.0,
+      "base_spe": 80.0,
+      "types": [
+        "rock",
+        "water"
+      ]
+    },
+    "koffing": {
+      "base_hp": 40.0,
+      "base_atk": 65.0,
+      "base_def": 95.0,
+      "base_spa": 60.0,
+      "base_spd": 45.0,
+      "base_spe": 35.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "doduo": {
+      "base_hp": 35.0,
+      "base_atk": 85.0,
+      "base_def": 45.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 75.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "teddiursa": {
+      "base_hp": 60.0,
+      "base_atk": 80.0,
+      "base_def": 50.0,
+      "base_spa": 50.0,
+      "base_spd": 50.0,
+      "base_spe": 40.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "sunkern": {
+      "base_hp": 30.0,
+      "base_atk": 30.0,
+      "base_def": 30.0,
+      "base_spa": 30.0,
+      "base_spd": 30.0,
+      "base_spe": 30.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "lapras": {
+      "base_hp": 130.0,
+      "base_atk": 85.0,
+      "base_def": 80.0,
+      "base_spa": 85.0,
+      "base_spd": 95.0,
+      "base_spe": 60.0,
+      "types": [
+        "ice",
+        "water"
+      ]
+    },
+    "meowth": {
+      "base_hp": 40.0,
+      "base_atk": 45.0,
+      "base_def": 35.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 90.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "dratini": {
+      "base_hp": 41.0,
+      "base_atk": 64.0,
+      "base_def": 45.0,
+      "base_spa": 50.0,
+      "base_spd": 50.0,
+      "base_spe": 50.0,
+      "types": [
+        "dragon"
+      ]
+    },
+    "diglett": {
+      "base_hp": 10.0,
+      "base_atk": 55.0,
+      "base_def": 25.0,
+      "base_spa": 35.0,
+      "base_spd": 45.0,
+      "base_spe": 95.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "nidoranf": {
+      "base_hp": 55.0,
+      "base_atk": 47.0,
+      "base_def": 52.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 41.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "onix": {
+      "base_hp": 35.0,
+      "base_atk": 45.0,
+      "base_def": 160.0,
+      "base_spa": 30.0,
+      "base_spd": 45.0,
+      "base_spe": 70.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "sunflora": {
+      "base_hp": 75.0,
+      "base_atk": 75.0,
+      "base_def": 55.0,
+      "base_spa": 105.0,
+      "base_spd": 85.0,
+      "base_spe": 30.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "delibird": {
+      "base_hp": 45.0,
+      "base_atk": 55.0,
+      "base_def": 45.0,
+      "base_spa": 65.0,
+      "base_spd": 45.0,
+      "base_spe": 75.0,
+      "types": [
+        "flying",
+        "ice"
+      ]
+    },
+    "ninetales": {
+      "base_hp": 73.0,
+      "base_atk": 76.0,
+      "base_def": 75.0,
+      "base_spa": 81.0,
+      "base_spd": 100.0,
+      "base_spe": 100.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "ledian": {
+      "base_hp": 55.0,
+      "base_atk": 35.0,
+      "base_def": 50.0,
+      "base_spa": 55.0,
+      "base_spd": 110.0,
+      "base_spe": 85.0,
+      "types": [
+        "bug",
+        "flying"
+      ]
+    },
+    "wigglytuff": {
+      "base_hp": 140.0,
+      "base_atk": 70.0,
+      "base_def": 45.0,
+      "base_spa": 75.0,
+      "base_spd": 50.0,
+      "base_spe": 45.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "magcargo": {
+      "base_hp": 50.0,
+      "base_atk": 50.0,
+      "base_def": 120.0,
+      "base_spa": 80.0,
+      "base_spd": 80.0,
+      "base_spe": 30.0,
+      "types": [
+        "fire",
+        "rock"
+      ]
+    },
+    "togetic": {
+      "base_hp": 55.0,
+      "base_atk": 40.0,
+      "base_def": 85.0,
+      "base_spa": 80.0,
+      "base_spd": 105.0,
+      "base_spe": 40.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "xatu": {
+      "base_hp": 65.0,
+      "base_atk": 75.0,
+      "base_def": 70.0,
+      "base_spa": 95.0,
+      "base_spd": 70.0,
+      "base_spe": 95.0,
+      "types": [
+        "flying",
+        "psychic"
+      ]
+    },
+    "sandshrew": {
+      "base_hp": 50.0,
+      "base_atk": 75.0,
+      "base_def": 85.0,
+      "base_spa": 20.0,
+      "base_spd": 30.0,
+      "base_spe": 40.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "igglybuff": {
+      "base_hp": 90.0,
+      "base_atk": 30.0,
+      "base_def": 15.0,
+      "base_spa": 40.0,
+      "base_spd": 20.0,
+      "base_spe": 15.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "growlithe": {
+      "base_hp": 55.0,
+      "base_atk": 70.0,
+      "base_def": 45.0,
+      "base_spa": 70.0,
+      "base_spd": 50.0,
+      "base_spe": 60.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "cubone": {
+      "base_hp": 50.0,
+      "base_atk": 50.0,
+      "base_def": 95.0,
+      "base_spa": 40.0,
+      "base_spd": 50.0,
+      "base_spe": 35.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "raticate": {
+      "base_hp": 55.0,
+      "base_atk": 81.0,
+      "base_def": 60.0,
+      "base_spa": 50.0,
+      "base_spd": 70.0,
+      "base_spe": 97.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "flaaffy": {
+      "base_hp": 70.0,
+      "base_atk": 55.0,
+      "base_def": 55.0,
+      "base_spa": 80.0,
+      "base_spd": 60.0,
+      "base_spe": 45.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "dewgong": {
+      "base_hp": 90.0,
+      "base_atk": 70.0,
+      "base_def": 80.0,
+      "base_spa": 70.0,
+      "base_spd": 95.0,
+      "base_spe": 70.0,
+      "types": [
+        "ice",
+        "water"
+      ]
+    },
+    "slowpoke": {
+      "base_hp": 90.0,
+      "base_atk": 65.0,
+      "base_def": 65.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 15.0,
+      "types": [
+        "psychic",
+        "water"
+      ]
+    },
+    "togepi": {
+      "base_hp": 35.0,
+      "base_atk": 20.0,
+      "base_def": 65.0,
+      "base_spa": 40.0,
+      "base_spd": 65.0,
+      "base_spe": 20.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "zubat": {
+      "base_hp": 40.0,
+      "base_atk": 45.0,
+      "base_def": 35.0,
+      "base_spa": 30.0,
+      "base_spd": 40.0,
+      "base_spe": 55.0,
+      "types": [
+        "flying",
+        "poison"
+      ]
+    },
+    "golduck": {
+      "base_hp": 80.0,
+      "base_atk": 82.0,
+      "base_def": 78.0,
+      "base_spa": 95.0,
+      "base_spd": 80.0,
+      "base_spe": 85.0,
+      "types": [
+        "water"
+      ]
+    },
+    "furret": {
+      "base_hp": 85.0,
+      "base_atk": 76.0,
+      "base_def": 64.0,
+      "base_spa": 45.0,
+      "base_spd": 55.0,
+      "base_spe": 90.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "drowzee": {
+      "base_hp": 60.0,
+      "base_atk": 48.0,
+      "base_def": 45.0,
+      "base_spa": 43.0,
+      "base_spd": 90.0,
+      "base_spe": 42.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "dragonair": {
+      "base_hp": 61.0,
+      "base_atk": 84.0,
+      "base_def": 65.0,
+      "base_spa": 70.0,
+      "base_spd": 70.0,
+      "base_spe": 70.0,
+      "types": [
+        "dragon"
+      ]
+    },
+    "gloom": {
+      "base_hp": 60.0,
+      "base_atk": 65.0,
+      "base_def": 70.0,
+      "base_spa": 85.0,
+      "base_spd": 75.0,
+      "base_spe": 40.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "wobbuffet": {
+      "base_hp": 190.0,
+      "base_atk": 33.0,
+      "base_def": 58.0,
+      "base_spa": 33.0,
+      "base_spd": 58.0,
+      "base_spe": 33.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "dunsparce": {
+      "base_hp": 100.0,
+      "base_atk": 70.0,
+      "base_def": 70.0,
+      "base_spa": 65.0,
+      "base_spd": 65.0,
+      "base_spe": 45.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "parasect": {
+      "base_hp": 60.0,
+      "base_atk": 95.0,
+      "base_def": 80.0,
+      "base_spa": 60.0,
+      "base_spd": 80.0,
+      "base_spe": 30.0,
+      "types": [
+        "bug",
+        "grass"
+      ]
+    },
+    "noctowl": {
+      "base_hp": 100.0,
+      "base_atk": 50.0,
+      "base_def": 50.0,
+      "base_spa": 76.0,
+      "base_spd": 96.0,
+      "base_spe": 70.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "cyndaquil": {
+      "base_hp": 39.0,
+      "base_atk": 52.0,
+      "base_def": 43.0,
+      "base_spa": 60.0,
+      "base_spd": 50.0,
+      "base_spe": 65.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "totodile": {
+      "base_hp": 50.0,
+      "base_atk": 65.0,
+      "base_def": 64.0,
+      "base_spa": 44.0,
+      "base_spd": 48.0,
+      "base_spe": 43.0,
+      "types": [
+        "water"
+      ]
+    },
+    "phanpy": {
+      "base_hp": 90.0,
+      "base_atk": 60.0,
+      "base_def": 60.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 40.0,
+      "types": [
+        "ground"
+      ]
+    },
+    "mantine": {
+      "base_hp": 65.0,
+      "base_atk": 40.0,
+      "base_def": 70.0,
+      "base_spa": 80.0,
+      "base_spd": 140.0,
+      "base_spe": 70.0,
+      "types": [
+        "flying",
+        "water"
+      ]
+    },
+    "magby": {
+      "base_hp": 45.0,
+      "base_atk": 75.0,
+      "base_def": 37.0,
+      "base_spa": 70.0,
+      "base_spd": 55.0,
+      "base_spe": 83.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "abra": {
+      "base_hp": 25.0,
+      "base_atk": 20.0,
+      "base_def": 15.0,
+      "base_spa": 105.0,
+      "base_spd": 55.0,
+      "base_spe": 90.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "seadra": {
+      "base_hp": 55.0,
+      "base_atk": 65.0,
+      "base_def": 95.0,
+      "base_spa": 95.0,
+      "base_spd": 45.0,
+      "base_spe": 85.0,
+      "types": [
+        "water"
+      ]
+    },
+    "yanma": {
+      "base_hp": 65.0,
+      "base_atk": 65.0,
+      "base_def": 45.0,
+      "base_spa": 75.0,
+      "base_spd": 45.0,
+      "base_spe": 95.0,
+      "types": [
+        "bug",
+        "flying"
+      ]
+    },
+    "beedrill": {
+      "base_hp": 65.0,
+      "base_atk": 80.0,
+      "base_def": 40.0,
+      "base_spa": 45.0,
+      "base_spd": 80.0,
+      "base_spe": 75.0,
+      "types": [
+        "bug",
+        "poison"
+      ]
+    },
+    "pupitar": {
+      "base_hp": 70.0,
+      "base_atk": 84.0,
+      "base_def": 70.0,
+      "base_spa": 65.0,
+      "base_spd": 70.0,
+      "base_spe": 51.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "charmeleon": {
+      "base_hp": 58.0,
+      "base_atk": 64.0,
+      "base_def": 58.0,
+      "base_spa": 80.0,
+      "base_spd": 65.0,
+      "base_spe": 80.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "omastar": {
+      "base_hp": 70.0,
+      "base_atk": 60.0,
+      "base_def": 125.0,
+      "base_spa": 115.0,
+      "base_spd": 70.0,
+      "base_spe": 55.0,
+      "types": [
+        "rock",
+        "water"
+      ]
+    },
+    "porygon": {
+      "base_hp": 65.0,
+      "base_atk": 60.0,
+      "base_def": 70.0,
+      "base_spa": 85.0,
+      "base_spd": 75.0,
+      "base_spe": 40.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "corsola": {
+      "base_hp": 55.0,
+      "base_atk": 55.0,
+      "base_def": 85.0,
+      "base_spa": 65.0,
+      "base_spd": 85.0,
+      "base_spe": 35.0,
+      "types": [
+        "rock",
+        "water"
+      ]
+    },
+    "squirtle": {
+      "base_hp": 44.0,
+      "base_atk": 48.0,
+      "base_def": 65.0,
+      "base_spa": 50.0,
+      "base_spd": 64.0,
+      "base_spe": 43.0,
+      "types": [
+        "water"
+      ]
+    },
+    "bulbasaur": {
+      "base_hp": 45.0,
+      "base_atk": 49.0,
+      "base_def": 49.0,
+      "base_spa": 65.0,
+      "base_spd": 65.0,
+      "base_spe": 45.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "kabuto": {
+      "base_hp": 30.0,
+      "base_atk": 80.0,
+      "base_def": 90.0,
+      "base_spa": 55.0,
+      "base_spd": 45.0,
+      "base_spe": 55.0,
+      "types": [
+        "rock",
+        "water"
+      ]
+    },
+    "goldeen": {
+      "base_hp": 45.0,
+      "base_atk": 67.0,
+      "base_def": 60.0,
+      "base_spa": 35.0,
+      "base_spd": 50.0,
+      "base_spe": 63.0,
+      "types": [
+        "water"
+      ]
+    },
+    "sentret": {
+      "base_hp": 35.0,
+      "base_atk": 46.0,
+      "base_def": 34.0,
+      "base_spa": 35.0,
+      "base_spd": 45.0,
+      "base_spe": 20.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "tangela": {
+      "base_hp": 65.0,
+      "base_atk": 55.0,
+      "base_def": 115.0,
+      "base_spa": 100.0,
+      "base_spd": 40.0,
+      "base_spe": 60.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "hoothoot": {
+      "base_hp": 60.0,
+      "base_atk": 30.0,
+      "base_def": 30.0,
+      "base_spa": 36.0,
+      "base_spd": 56.0,
+      "base_spe": 50.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "seaking": {
+      "base_hp": 80.0,
+      "base_atk": 92.0,
+      "base_def": 65.0,
+      "base_spa": 65.0,
+      "base_spd": 80.0,
+      "base_spe": 68.0,
+      "types": [
+        "water"
+      ]
+    },
+    "chikorita": {
+      "base_hp": 45.0,
+      "base_atk": 49.0,
+      "base_def": 65.0,
+      "base_spa": 49.0,
+      "base_spd": 65.0,
+      "base_spe": 45.0,
+      "types": [
+        "grass"
+      ]
+    },
+    "chinchou": {
+      "base_hp": 75.0,
+      "base_atk": 38.0,
+      "base_def": 38.0,
+      "base_spa": 56.0,
+      "base_spd": 56.0,
+      "base_spe": 67.0,
+      "types": [
+        "electric",
+        "water"
+      ]
+    },
+    "voltorb": {
+      "base_hp": 40.0,
+      "base_atk": 30.0,
+      "base_def": 50.0,
+      "base_spa": 55.0,
+      "base_spd": 55.0,
+      "base_spe": 100.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "krabby": {
+      "base_hp": 30.0,
+      "base_atk": 105.0,
+      "base_def": 90.0,
+      "base_spa": 25.0,
+      "base_spd": 25.0,
+      "base_spe": 50.0,
+      "types": [
+        "water"
+      ]
+    },
+    "poliwag": {
+      "base_hp": 40.0,
+      "base_atk": 50.0,
+      "base_def": 40.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 90.0,
+      "types": [
+        "water"
+      ]
+    },
+    "paras": {
+      "base_hp": 35.0,
+      "base_atk": 70.0,
+      "base_def": 55.0,
+      "base_spa": 45.0,
+      "base_spd": 55.0,
+      "base_spe": 25.0,
+      "types": [
+        "bug",
+        "grass"
+      ]
+    },
+    "omanyte": {
+      "base_hp": 35.0,
+      "base_atk": 40.0,
+      "base_def": 100.0,
+      "base_spa": 90.0,
+      "base_spd": 55.0,
+      "base_spe": 35.0,
+      "types": [
+        "rock",
+        "water"
+      ]
+    },
+    "ponyta": {
+      "base_hp": 50.0,
+      "base_atk": 85.0,
+      "base_def": 55.0,
+      "base_spa": 65.0,
+      "base_spd": 65.0,
+      "base_spe": 90.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "nidorino": {
+      "base_hp": 61.0,
+      "base_atk": 72.0,
+      "base_def": 57.0,
+      "base_spa": 55.0,
+      "base_spd": 55.0,
+      "base_spe": 65.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "geodude": {
+      "base_hp": 40.0,
+      "base_atk": 80.0,
+      "base_def": 100.0,
+      "base_spa": 30.0,
+      "base_spd": 30.0,
+      "base_spe": 20.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "oddish": {
+      "base_hp": 45.0,
+      "base_atk": 50.0,
+      "base_def": 55.0,
+      "base_spa": 75.0,
+      "base_spd": 65.0,
+      "base_spe": 30.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "croconaw": {
+      "base_hp": 65.0,
+      "base_atk": 80.0,
+      "base_def": 80.0,
+      "base_spa": 59.0,
+      "base_spd": 63.0,
+      "base_spe": 58.0,
+      "types": [
+        "water"
+      ]
+    },
+    "rhyhorn": {
+      "base_hp": 80.0,
+      "base_atk": 85.0,
+      "base_def": 95.0,
+      "base_spa": 30.0,
+      "base_spd": 30.0,
+      "base_spe": 25.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "jigglypuff": {
+      "base_hp": 115.0,
+      "base_atk": 45.0,
+      "base_def": 20.0,
+      "base_spa": 45.0,
+      "base_spd": 25.0,
+      "base_spe": 20.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "shellder": {
+      "base_hp": 30.0,
+      "base_atk": 65.0,
+      "base_def": 100.0,
+      "base_spa": 45.0,
+      "base_spd": 25.0,
+      "base_spe": 40.0,
+      "types": [
+        "water"
+      ]
+    },
+    "grimer": {
+      "base_hp": 80.0,
+      "base_atk": 80.0,
+      "base_def": 50.0,
+      "base_spa": 40.0,
+      "base_spd": 50.0,
+      "base_spe": 25.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "spinarak": {
+      "base_hp": 40.0,
+      "base_atk": 60.0,
+      "base_def": 40.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 30.0,
+      "types": [
+        "bug",
+        "poison"
+      ]
+    },
+    "smoochum": {
+      "base_hp": 45.0,
+      "base_atk": 30.0,
+      "base_def": 15.0,
+      "base_spa": 85.0,
+      "base_spd": 65.0,
+      "base_spe": 65.0,
+      "types": [
+        "ice",
+        "psychic"
+      ]
+    },
+    "metapod": {
+      "base_hp": 50.0,
+      "base_atk": 20.0,
+      "base_def": 55.0,
+      "base_spa": 25.0,
+      "base_spd": 25.0,
+      "base_spe": 30.0,
+      "types": [
+        "bug"
+      ]
+    },
+    "skiploom": {
+      "base_hp": 55.0,
+      "base_atk": 45.0,
+      "base_def": 50.0,
+      "base_spa": 45.0,
+      "base_spd": 65.0,
+      "base_spe": 80.0,
+      "types": [
+        "flying",
+        "grass"
+      ]
+    },
+    "larvitar": {
+      "base_hp": 50.0,
+      "base_atk": 64.0,
+      "base_def": 50.0,
+      "base_spa": 45.0,
+      "base_spd": 50.0,
+      "base_spe": 41.0,
+      "types": [
+        "ground",
+        "rock"
+      ]
+    },
+    "spearow": {
+      "base_hp": 40.0,
+      "base_atk": 60.0,
+      "base_def": 30.0,
+      "base_spa": 31.0,
+      "base_spd": 31.0,
+      "base_spe": 70.0,
+      "types": [
+        "flying",
+        "normal"
+      ]
+    },
+    "gengarmega": {
+      "base_hp": 60.0,
+      "base_atk": 65.0,
+      "base_def": 80.0,
+      "base_spa": 170.0,
+      "base_spd": 95.0,
+      "base_spe": 130.0,
+      "types": [
+        "ghost",
+        "poison"
+      ]
+    },
+    "mareep": {
+      "base_hp": 55.0,
+      "base_atk": 40.0,
+      "base_def": 40.0,
+      "base_spa": 65.0,
+      "base_spd": 45.0,
+      "base_spe": 35.0,
+      "types": [
+        "electric"
+      ]
+    },
+    "psyduck": {
+      "base_hp": 50.0,
+      "base_atk": 52.0,
+      "base_def": 48.0,
+      "base_spa": 65.0,
+      "base_spd": 50.0,
+      "base_spe": 55.0,
+      "types": [
+        "water"
+      ]
+    },
+    "azumarill": {
+      "base_hp": 100.0,
+      "base_atk": 50.0,
+      "base_def": 80.0,
+      "base_spa": 50.0,
+      "base_spd": 80.0,
+      "base_spe": 50.0,
+      "types": [
+        "water"
+      ]
+    },
+    "mewtwo": {
+      "base_hp": 106.0,
+      "base_atk": 110.0,
+      "base_def": 90.0,
+      "base_spa": 154.0,
+      "base_spd": 90.0,
+      "base_spe": 130.0,
+      "types": [
+        "psychic"
+      ]
+    },
+    "snubbull": {
+      "base_hp": 60.0,
+      "base_atk": 80.0,
+      "base_def": 50.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 30.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "bellsprout": {
+      "base_hp": 50.0,
+      "base_atk": 75.0,
+      "base_def": 35.0,
+      "base_spa": 70.0,
+      "base_spd": 30.0,
+      "base_spe": 40.0,
+      "types": [
+        "grass",
+        "poison"
+      ]
+    },
+    "charmander": {
+      "base_hp": 39.0,
+      "base_atk": 52.0,
+      "base_def": 43.0,
+      "base_spa": 60.0,
+      "base_spd": 50.0,
+      "base_spe": 65.0,
+      "types": [
+        "fire"
+      ]
+    },
+    "wooper": {
+      "base_hp": 55.0,
+      "base_atk": 45.0,
+      "base_def": 45.0,
+      "base_spa": 25.0,
+      "base_spd": 25.0,
+      "base_spe": 15.0,
+      "types": [
+        "ground",
+        "water"
+      ]
+    },
+    "eevee": {
+      "base_hp": 55.0,
+      "base_atk": 55.0,
+      "base_def": 50.0,
+      "base_spa": 45.0,
+      "base_spd": 65.0,
+      "base_spe": 55.0,
+      "types": [
+        "normal"
+      ]
+    },
+    "caterpie": {
+      "base_hp": 45.0,
+      "base_atk": 30.0,
+      "base_def": 35.0,
+      "base_spa": 20.0,
+      "base_spd": 20.0,
+      "base_spe": 45.0,
+      "types": [
+        "bug"
+      ]
+    },
+    "nidoranm": {
+      "base_hp": 46.0,
+      "base_atk": 57.0,
+      "base_def": 40.0,
+      "base_spa": 40.0,
+      "base_spd": 40.0,
+      "base_spe": 50.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "ekans": {
+      "base_hp": 35.0,
+      "base_atk": 60.0,
+      "base_def": 44.0,
+      "base_spa": 40.0,
+      "base_spd": 54.0,
+      "base_spe": 55.0,
+      "types": [
+        "poison"
+      ]
+    },
+    "tentacool": {
+      "base_hp": 40.0,
+      "base_atk": 40.0,
+      "base_def": 35.0,
+      "base_spa": 50.0,
+      "base_spd": 100.0,
+      "base_spe": 70.0,
+      "types": [
+        "poison",
+        "water"
+      ]
+    },
+    "tyrogue": {
+      "base_hp": 35.0,
+      "base_atk": 35.0,
+      "base_def": 35.0,
+      "base_spa": 35.0,
+      "base_spd": 35.0,
+      "base_spe": 35.0,
+      "types": [
+        "fighting"
+      ]
+    },
+    "slugma": {
+      "base_hp": 40.0,
+      "base_atk": 40.0,
+      "base_def": 40.0,
+      "base_spa": 70.0,
+      "base_spd": 40.0,
+      "base_spe": 20.0,
+      "types": [
+        "fire"
+      ]
+    }
+  },
+  "vocab": {
+    "species": [
+      "snorlax",
+      "zapdos",
+      "cloyster",
+      "raikou",
+      "tyranitar",
+      "skarmory",
+      "exeggutor",
+      "gengar",
+      "steelix",
+      "nidoking",
+      "forretress",
+      "starmie",
+      "machamp",
+      "umbreon",
+      "golem",
+      "blissey",
+      "jynx",
+      "miltank",
+      "vaporeon",
+      "suicune",
+      "marowak",
+      "misdreavus",
+      "jolteon",
+      "heracross",
+      "rhydon",
+      "dragonite",
+      "alakazam",
+      "houndoom",
+      "smeargle",
+      "meganium",
+      "charizard",
+      "scizor",
+      "quagsire",
+      "espeon",
+      "tentacruel",
+      "venusaur",
+      "porygon2",
+      "kingdra",
+      "ampharos",
+      "lanturn",
+      "typhlosion",
+      "moltres",
+      "blastoise",
+      "piloswine",
+      "shuckle",
+      "aerodactyl",
+      "lapras",
+      "donphan",
+      "pikachu",
+      "kangaskhan",
+      "qwilfish",
+      "nidoqueen",
+      "clefable",
+      "jumpluff",
+      "electabuzz"
+    ],
+    "moves": [
+      "thunder",
+      "earthquake",
+      "rest",
+      "hiddenpower",
+      "curse",
+      "spikes",
+      "doubleedge",
+      "sleeptalk",
+      "surf",
+      "toxic",
+      "thunderbolt",
+      "bodyslam",
+      "roar",
+      "psychic",
+      "rockslide",
+      "icebeam",
+      "lovelykiss",
+      "rapidspin",
+      "fireblast",
+      "whirlwind",
+      "thunderwave",
+      "explosion",
+      "drillpeck",
+      "thief",
+      "crosschop",
+      "icepunch",
+      "dynamicpunch",
+      "reflect",
+      "pursuit",
+      "sleeppowder",
+      "gigadrain",
+      "flamethrower",
+      "batonpass",
+      "protect",
+      "substitute"
+    ],
+    "types": [
+      "normal",
+      "electric",
+      "ground",
+      "psychic",
+      "water",
+      "poison",
+      "ice",
+      "threequestionmarks",
+      "grass",
+      "rock",
+      "flying",
+      "dark",
+      "fighting",
+      "fire",
+      "ghost",
+      "steel",
+      "bug",
+      "dragon"
+    ],
+    "items": [
+      "leftovers",
+      "thickclub",
+      "miracleberry",
+      "mintberry",
+      "charcoal",
+      "goldberry",
+      "lightball",
+      "berryjuice",
+      "berserkgene",
+      "przcureberry",
+      "berry",
+      "scopelens"
+    ]
+  },
+  "final_cat_rounds": 816,
+  "final_lgb_rounds": 381,
+  "blend_weights": {
+    "catboost": 0.65,
+    "lightgbm": 0.35
+  },
+  "classification_threshold": 0.5,
+  "catboost_params": {
+    "iterations": 1700,
+    "depth": 5,
+    "learning_rate": 0.035,
+    "l2_leaf_reg": 7.0,
+    "random_strength": 0.7,
+    "loss_function": "Logloss",
+    "eval_metric": "Logloss",
+    "random_seed": 42,
+    "thread_count": 4,
+    "allow_writing_files": false,
+    "verbose": false
+  },
+  "lightgbm_params": {
+    "n_estimators": 1700,
+    "learning_rate": 0.025,
+    "num_leaves": 17,
+    "min_child_samples": 55,
+    "colsample_bytree": 0.85,
+    "subsample": 0.85,
+    "subsample_freq": 1,
+    "reg_lambda": 5.0,
+    "objective": "binary",
+    "random_state": 42,
+    "n_jobs": 4,
+    "verbosity": -1
+  },
+  "versions": {
+    "python": "3.13.18",
+    "catboost": "1.2.10",
+    "lightgbm": "4.6.0",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1"
+  },
+  "cv_scores_mean": {
+    "catboost_accuracy": 0.6830002436356413,
+    "lightgbm_accuracy": 0.6750005834416676,
+    "blend_accuracy": 0.6868002637096343
+  },
+  "cv_best_cat_rounds": [
+    921,
+    816,
+    655
+  ],
+  "cv_best_lgb_rounds": [
+    265,
+    416,
+    381
+  ]
+}
