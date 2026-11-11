@@ -1,10 +1,7 @@
-"""Feature engineering for the Sapienza FDS Gen 2 battle challenge.
+"""Feature engineering:
 
-Inputs: ONLY the competition's JSONL records and, optionally, its supplied
-Gen 2 type chart. No external Pokemon databases or replay information.
-
-Caution: use for study/experimentation; adapt, understand, and document AI
-assistance in accordance with your course's academic-integrity rules.
+Inputs: ONLY the competition's JSONL records and its supplied
+Gen 2 type chart. 
 """
 
 from collections import Counter
@@ -106,8 +103,7 @@ def build_vocab(train_records, max_species=55, max_moves=35):
 
 
 def load_type_chart(path):
-    """Optional: supplied CSV/JSON type chart; rows are *attacking* types.
-
+    """
     CSV supported: long (attack, defense, multiplier) or wide attack-type rows.
     A Water->Fire sanity check comes from the challenge handout itself.
     """
@@ -139,7 +135,7 @@ def load_type_chart(path):
                 for df in raw.columns:
                     if df != atk_col:
                         chart[(atk, df)] = fnum(r[df], 1.0)
-    # Water attacks should do double damage against Fire according to the PDF.
+    # Water attacks should do double damage against Fire.
     if chart and chart.get(('water', 'fire')) != 2.0:
         if chart.get(('fire', 'water')) == 2.0:
             chart = {(b, a): x for (a, b), x in chart.items()}

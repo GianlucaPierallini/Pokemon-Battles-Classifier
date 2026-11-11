@@ -1,7 +1,4 @@
 """Predict Kaggle's 5,000 test battles using SAVED native model artifacts only.
-
-No training, cross-validation, test-based model selection, external Pokémon
-information, or training JSONL file is used in this script.
 """
 from __future__ import annotations
 

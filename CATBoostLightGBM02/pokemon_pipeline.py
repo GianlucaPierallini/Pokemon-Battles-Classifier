@@ -1,8 +1,4 @@
-"""Competition input and feature-matrix preparation.
-
-The computations and column ordering here follow kaggle_submission(1).ipynb,
-unchanged in purpose and parameters. All battle data, targets, submission template,
-and the official Gen 2 type chart remain on Kaggle.
+"""Input and feature-matrix preparation.
 """
 
 from dataclasses import dataclass
@@ -83,7 +79,7 @@ def prepare_competition_data(
 
     Vocabulary and species lookup are built from TRAIN records only. The
     test set is only transformed with the same columns. An optional chart
-    in the repository is a fallback; the intended chart is on Kaggle.
+    in the repository is a fallback.
     """
     DATA_DIR = Path(data_dir)
     DATA_ROOT = Path(input_root)
@@ -127,7 +123,7 @@ def prepare_competition_data(
     train_features = make_features(train_data, species_lookup, vocab, type_chart)
     test_features = make_features(test_data, species_lookup, vocab, type_chart)
 
-    # Force precisely the same design matrix, in the same order.
+    
     train_features, test_features = train_features.align(test_features, join='left', axis=1, fill_value=0)
     assert 'player_won' not in train_features.columns
     assert 'battle_id' not in train_features.columns
@@ -157,7 +153,6 @@ def prepare_competition_data(
     assert X.shape == (10000, 714), f'Expected the previous feature shape, got {X.shape}'
     assert len(cat_cols) == 13, 'Categorical column count differs from the local run'
 
-    # Same LightGBM categorical conversion as the original notebook.
     X_lgb = X.copy()
     X_test_lgb = X_test.copy()
     for col in cat_cols:

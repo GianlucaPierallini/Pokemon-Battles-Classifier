@@ -1,10 +1,4 @@
 """One-time TRAIN / VALIDATE / EXPORT workflow for the FDS Pokémon competition.
-
-Execute once on Kaggle with official supplied competition files, then upload the
-artifacts created here to GitHub under CATBoostLightGBM/artifacts/.
-
-This code preserves the original CV hyperparameters, median rounds and final
-training. It does NOT use any external Pokémon data or pretrained models.
 """
 from __future__ import annotations
 
@@ -129,8 +123,6 @@ def train_validate_export(
     """One-time end-to-end experiment, then exact native-model round-trip check.
 
     The *old* cross-validation and training are called unmodified in meaning.
-    Validation is used solely to select final iteration counts and report OOF
-    accuracy, never to infer the 5,000 unlabeled outcomes.
     """
     from pokemon_inference import generate_submission, load_saved_models
 

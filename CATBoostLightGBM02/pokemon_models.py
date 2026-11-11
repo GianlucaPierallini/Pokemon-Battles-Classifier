@@ -1,11 +1,3 @@
-"""CatBoost + LightGBM experiment moved from kaggle_submission(1).ipynb.
-
-This module deliberately preserves the exact model hyperparameters, validation
-split, early stopping, iteration selection, feature handling, 0.65/0.35 blend,
-and binary threshold from the original 68.48% LOCAL cross-validation run.
-The local score is not guaranteed on a different Kaggle environment.
-"""
-
 from dataclasses import dataclass
 from pathlib import Path
 
